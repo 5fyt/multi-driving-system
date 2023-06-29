@@ -1,0 +1,7 @@
+server:
+  port: 9000
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 117.50.197.154:38848

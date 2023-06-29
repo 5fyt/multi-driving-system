@@ -1,0 +1,103 @@
+page {
+  height: 100%;
+  font-family: Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+}
+.page {
+  padding-bottom: 70rpx;
+  padding-left: 40rpx;
+  padding-right: 40rpx;
+  padding-top: 120rpx;
+}
+.notice {
+  background-color: #fee7a3;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20rpx 30rpx;
+}
+.notice text {
+  font-size: 26rpx;
+  color: #ac9146;
+  margin-left: 10rpx;
+}
+.title-container {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: solid 1rpx #e0e0e0;
+  padding-bottom: 20rpx;
+}
+.title-container .title {
+  color: #444;
+  font-size: 34rpx;
+  font-weight: bold;
+}
+.title-container .balance {
+  color: #ff5555;
+  font-size: 34rpx;
+  font-weight: bold;
+}
+.recharge-container {
+  padding-top: 40rpx;
+}
+.recharge-container .title {
+  font-size: 30rpx;
+  color: #444;
+  margin-bottom: 35rpx;
+}
+.recharge-container .recharge-amount {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.recharge-container .recharge-amount .amount {
+  width: 150rpx;
+  border: solid 1rpx #e0e0e0;
+  text-align: center;
+  line-height: 70rpx;
+  border-radius: 8rpx;
+  margin-bottom: 20rpx;
+  color: #444;
+  font-size: 28rpx;
+}
+.recharge-container .recharge-amount .active {
+  background-color: rgba(32, 116, 253, 0.1);
+  border: solid 1rpx #2074fd;
+}
+.recharge-container .desc {
+  font-size: 26rpx;
+  color: #a0a0a0;
+  margin-top: 20rpx;
+}
+.recharge-container .btn {
+  background-color: #2074fd;
+  color: #fff;
+  margin-top: 60rpx;
+}
+.recharge-container .btn::after {
+  border: none;
+}
+.recharge-container .btn:active {
+  background-color: #0259e9;
+}
+.rule-container {
+  padding-top: 60rpx;
+}
+.rule-container .title {
+  font-size: 30rpx;
+  color: #a0a0a0;
+  margin-bottom: 25rpx;
+}
+.rule-container .rule {
+  font-size: 28rpx;
+  color: #a0a0a0;
+  line-height: 1.7;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  display: flex;
+}
+.rule-container .rule .num {
+  margin-right: 10rpx;
+}
+

@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "接单设置",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "u-cell-group": "/uview-ui/components/u-cell-group/u-cell-group",
+    "u-cell-item": "/uview-ui/components/u-cell-item/u-cell-item",
+    "u-switch": "/uview-ui/components/u-switch/u-switch",
+    "u-select": "/uview-ui/components/u-select/u-select"
+  }
+}

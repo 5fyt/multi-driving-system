@@ -1,0 +1,27 @@
+page {
+  font-family: Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+}
+.step {
+  margin-top: 60rpx;
+}
+.title {
+  font-size: 50rpx;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 65rpx;
+  margin-bottom: 40rpx;
+  color: #444;
+}
+.btn {
+  background-color: #2074fd;
+  color: #fff;
+  margin-top: 80rpx;
+  width: 90%;
+}
+.btn::after {
+  border: none;
+}
+.btn:active {
+  background-color: #0259e9;
+}
+

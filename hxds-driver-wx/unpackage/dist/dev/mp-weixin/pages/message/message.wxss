@@ -1,0 +1,45 @@
+page {
+  font-family: Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+  background-color: #eef0f6;
+}
+.message {
+  margin: 55rpx;
+}
+.message .header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15rpx;
+}
+.message .header .desc {
+  font-size: 28rpx;
+  color: #999;
+}
+.message .header .opt {
+  font-size: 28rpx;
+  color: red;
+  padding-right: 10rpx;
+}
+.message .content {
+  background-color: #fff;
+  padding: 20rpx 45rpx;
+  border-radius: 15rpx;
+}
+.message .content .sender {
+  display: flex;
+  margin-bottom: 15rpx;
+}
+.message .content .sender image {
+  width: 60rpx;
+  margin-right: 20rpx;
+}
+.message .content .sender text {
+  font-size: 32rpx;
+  color: #444;
+  margin-top: 10rpx;
+}
+.message .content .msg {
+  font-size: 30rpx;
+  line-height: 1.8;
+  color: #a0a0a0;
+}
+

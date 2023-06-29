@@ -1,0 +1,130 @@
+@import url('../../style.less');
+page {
+	background-color: @bgc-1;
+	height: 100%;
+	font-family: @ff-1;
+}
+.page {
+	padding-bottom: 70rpx;
+}
+.top {
+	width: 100%;
+}
+.location-container {
+	display: flex;
+	justify-content: space-between;
+	background-color: #fff;
+	width: 85%;
+	margin-left: auto;
+	margin-right: auto;
+	// border: #e5e5e5 solid 1rpx;
+	padding: 25rpx 30rpx;
+	border-radius: 10rpx;
+	position: relative;
+	top: -40rpx;
+	box-shadow: @bc-1 0px 2px 8px 0px;
+	margin-bottom: 50rpx;
+	.left {
+		display: flex;
+		font-size: 28rpx;
+		color: @fc-2;
+		.location {
+			width: 30rpx;
+			margin-top: 6rpx;
+			margin-right: 5rpx;
+		}
+	}
+	.right {
+		font-size: 28rpx;
+		color: @fc-2;
+	}
+}
+.info-container {
+	background-color: #fff;
+	border-radius: 10rpx;
+	width: 85%;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 25rpx;
+	margin-bottom: 80rpx;
+	// box-shadow: #e0e0e0 0px 2px 8px 0px;
+	.title-container {
+		text-align: center;
+		position: relative;
+		margin-bottom: 25rpx;
+		.title-bg {
+			width: 380rpx;
+			margin-top: -29rpx;
+		}
+		.title {
+			color: @fc-1;
+			text-align: center;
+			display: block;
+			width: 100%;
+			position: absolute;
+			top: -14rpx;
+			font-size: 32rpx;
+			font-weight: bold;
+		}
+	}
+	.list {
+		margin: 0 40rpx;
+		font-size: 28rpx;
+		color: @fc-8;
+		line-height: 1.7;
+		.item {
+			margin-bottom: 10rpx;
+			display: flex;
+			text {
+				margin-right: 15rpx;
+			}
+		}
+		.complex-item {
+			display: flex;
+			line-height: 1;
+			border-bottom: solid 1rpx @bc-4;
+			padding-bottom: 35rpx;
+			padding-top: 35rpx;
+			&:first-child {
+				padding-top: 0;
+			}
+			&:last-child {
+				border-bottom: none;
+			}
+			.left {
+				font-size: 90rpx;
+				color: @fc-9;
+				font-weight: bold;
+				margin-right: 25rpx;
+				// margin-top: -20rpx;
+			}
+			.right {
+				.item-title {
+					font-weight: bold;
+					color: @fc-1;
+					display: block;
+					font-size: 34rpx;
+					margin-top: 8rpx;
+					margin-bottom: 14rpx;
+				}
+				.item-desc {
+					color: @fc-8;
+					display: block;
+					font-size: 28rpx;
+				}
+			}
+		}
+	}
+}
+
+.btn {
+	width: 85%;
+	background-color: @btnc-1;
+	color: #fff;
+	&::after {
+		border: none;
+	}
+	&:active {
+		background-color: @btnac-1;
+	}
+}

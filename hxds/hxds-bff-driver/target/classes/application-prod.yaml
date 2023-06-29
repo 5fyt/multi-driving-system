@@ -1,0 +1,11 @@
+server:
+  port: 9100
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 117.50.197.154:38848
+  data:
+    redis:
+      host: 117.50.197.154
+      port: 36379

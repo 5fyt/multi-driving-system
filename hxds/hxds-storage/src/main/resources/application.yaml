@@ -1,0 +1,11 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: hxds-storage
+tengxun:
+  cloud:
+    secret-id: AKIDufQzNZYJtFMGwPdcMuDHLRc2LSOAj4DA
+    secret-key: whEZgaKv21oNiqocDi2A4nJfqqdIjy1s
+    bucket: hxds-1317450586
+    region: ap-nanjing

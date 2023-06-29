@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "工作台",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "u-avatar": "/uview-ui/components/u-avatar/u-avatar",
+    "u-top-tips": "/uview-ui/components/u-top-tips/u-top-tips",
+    "u-toast": "/uview-ui/components/u-toast/u-toast",
+    "u-modal": "/uview-ui/components/u-modal/u-modal"
+  }
+}

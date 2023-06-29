@@ -1,0 +1,19 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: hxds-driver
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+mybatis-plus:
+  global-config:
+    banner: false
+  mapper-locations: classpath:/mapper/*.xml
+wx:
+  appid: wx12cbb3ff22e82097          # 替换
+  secret: 7f7053c2c78230828863727d9c67b63f        # 替换
+tengxun:
+  cloud:
+    secret-id: AKIDufQzNZYJtFMGwPdcMuDHLRc2LSOAj4DA
+    secret-key: whEZgaKv21oNiqocDi2A4nJfqqdIjy1s
+    group-id: hxds-archive

@@ -1,0 +1,1 @@
+<view><view class="message"><view class="header"><view class="desc">{{sendTime}}</view><view data-event-opts="{{[['tap',[['deleteMsg']]]]}}" class="opt" bindtap="__e">删除</view></view><view class="content"><view class="sender"><image class="photo" src="{{senderPhoto}}" mode="widthFix"></image><text>{{senderName}}</text></view><view class="msg">{{msg}}</view></view></view></view>

@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "等待客户付款",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "u-icon": "/uview-ui/components/u-icon/u-icon",
+    "u-top-tips": "/uview-ui/components/u-top-tips/u-top-tips"
+  }
+}

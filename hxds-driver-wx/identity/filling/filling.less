@@ -1,0 +1,119 @@
+@import url("../../style.less");
+page {
+	background-color: #eef0f6;
+	height: 100%;
+	font-family: @ff-1;
+}
+.page {
+	padding-bottom: 70rpx;
+	padding-left: 40rpx;
+	padding-right: 40rpx;
+	padding-top: 120rpx;
+}
+.notice {
+	background-color: @bgc-5;
+	position: fixed;
+	z-index: 999;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 20rpx 30rpx;
+	// display: flex;
+	text {
+		font-size: 26rpx;
+		color: @fc-14;
+		margin-left: 10rpx;
+	}
+}
+.credentials-container {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	.credentials {
+		width: 214rpx;
+		height: 150rpx;
+		margin-bottom: 60rpx;
+		position: relative;
+		.bg {
+			width: 214rpx;
+			height: 150rpx;
+			display: block;
+			border-radius: 10rpx;
+		}
+		.cover {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 214rpx;
+			height: 150rpx;
+			.card {
+				width: 46rpx;
+				margin-top: 20rpx;
+				margin-left: 25rpx;
+			}
+			.desc {
+				display: block;
+				font-size: 24rpx;
+				color: #fff;
+				margin-left: 25rpx;
+				margin-top: 0rpx;
+				line-height: 1;
+				font-weight: bold;
+			}
+			.camera {
+				border: none;
+				background-color: @btnc-1;
+				width: 70rpx;
+				height: 70rpx;
+				border-radius: 35rpx;
+				margin-left: auto;
+				margin-right: auto;
+				margin-top: 15rpx;
+				background-image: url(../static/filling/camera.png);
+				background-size: 40rpx;
+				background-repeat: no-repeat;
+				background-position: 16rpx 15rpx;
+				&:active {
+					width: 70rpx;
+					height: 70rpx;
+					border-radius: 35rpx;
+					background-color: @btnac-1;
+				}
+			}
+		}
+	}
+}
+.title {
+	font-weight: bold;
+	font-size: 32rpx;
+	color: @fc-1;
+	margin-top: 25rpx;
+	margin-bottom: 25rpx;
+	padding-left: 10rpx;
+}
+.list {
+	border-radius: 20rpx;
+	background-color: #fff;
+	overflow: hidden;
+}
+.btn {
+	background-color: @btnc-1;
+	color: #fff;
+	margin-top: 40rpx;
+	border: none;
+	padding-top: 8rpx;
+	padding-bottom: 8rpx;
+	&::after {
+		border: none;
+	}
+	&:active {
+		background-color: @btnac-1;
+	}
+}
+.remark {
+	color: @fc-3;
+	font-size: 28rpx;
+	margin-top: 30rpx;
+	line-height: 1.7;
+	bottom: 60rpx;
+}

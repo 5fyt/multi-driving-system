@@ -1,0 +1,18 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: hxds-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: hxds-bff-driver
+          predicates:
+            - Path=/driver/**
+          uri: lb://hxds-bff-driver
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods: "*"
+            allowedHeaders: "*"

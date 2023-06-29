@@ -1,0 +1,44 @@
+{
+  "groups": [
+    {
+      "name": "tengxun.cloud",
+      "type": "com.xiaoyao.hxds.driver.properties.TengXunProperties",
+      "sourceType": "com.xiaoyao.hxds.driver.properties.TengXunProperties"
+    },
+    {
+      "name": "wx",
+      "type": "com.xiaoyao.hxds.driver.properties.WXProperties",
+      "sourceType": "com.xiaoyao.hxds.driver.properties.WXProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "tengxun.cloud.group-id",
+      "type": "java.lang.String",
+      "sourceType": "com.xiaoyao.hxds.driver.properties.TengXunProperties"
+    },
+    {
+      "name": "tengxun.cloud.secret-id",
+      "type": "java.lang.String",
+      "sourceType": "com.xiaoyao.hxds.driver.properties.TengXunProperties"
+    },
+    {
+      "name": "tengxun.cloud.secret-key",
+      "type": "java.lang.String",
+      "sourceType": "com.xiaoyao.hxds.driver.properties.TengXunProperties"
+    },
+    {
+      "name": "wx.appid",
+      "type": "java.lang.String",
+      "description": "小程序appid",
+      "sourceType": "com.xiaoyao.hxds.driver.properties.WXProperties"
+    },
+    {
+      "name": "wx.secret",
+      "type": "java.lang.String",
+      "description": "小程序secret",
+      "sourceType": "com.xiaoyao.hxds.driver.properties.WXProperties"
+    }
+  ],
+  "hints": []
+}

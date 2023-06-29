@@ -1,0 +1,118 @@
+page {
+  background-color: #eef0f6;
+  height: 100%;
+  font-family: Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+}
+.page {
+  padding-bottom: 70rpx;
+  padding-left: 40rpx;
+  padding-right: 40rpx;
+  padding-top: 120rpx;
+}
+.notice {
+  background-color: #fee7a3;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20rpx 30rpx;
+}
+.notice text {
+  font-size: 26rpx;
+  color: #ac9146;
+  margin-left: 10rpx;
+}
+.credentials-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.credentials-container .credentials {
+  width: 214rpx;
+  height: 150rpx;
+  margin-bottom: 60rpx;
+  position: relative;
+}
+.credentials-container .credentials .bg {
+  width: 214rpx;
+  height: 150rpx;
+  display: block;
+  border-radius: 10rpx;
+}
+.credentials-container .credentials .cover {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 214rpx;
+  height: 150rpx;
+}
+.credentials-container .credentials .cover .card {
+  width: 46rpx;
+  margin-top: 20rpx;
+  margin-left: 25rpx;
+}
+.credentials-container .credentials .cover .desc {
+  display: block;
+  font-size: 24rpx;
+  color: #fff;
+  margin-left: 25rpx;
+  margin-top: 0rpx;
+  line-height: 1;
+  font-weight: bold;
+}
+.credentials-container .credentials .cover .camera {
+  border: none;
+  background-color: #2074fd;
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 35rpx;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15rpx;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAAB4CAMAAAAOusbgAAAAM1BMVEVHcEz////////////////////////////////////////////////////////////////P0YphAAAAEHRSTlMAr8+/EO9wUGBAMCCPgZ/fQDOO2QAABFNJREFUaAXtmuuWoyAMgFHxWm15/6ddumoS0cSE0T2z5+if2qnkIyE3cJx7rscCjwUeCzwWeCzwX1vAD61w9Xfp5sc6yNf4uoPtS5n6/bW+Azydc0MYrye/zuw8z2u4nFxpFA7hczW40XFDaK4le52h4+zqaz37rVU4hOJKlVs9N4T2OrImhHFqFwazKoSR/Lar3L9LtRchSHX3KTp2PkOhEpH9UMk4fHeXsjjTQ6WH+7khHGRUr8yJOP2cu4OMavTcHOp3zL58fXJF2cbtgvxlG5//dOrZQ74o28i0M+tNw8tibLp+eLVtM71ti5RmcgO4mpKg6BtDROSC6yahznnQN1q988B149mEq+xRcsD1Sd88avwkA1weGplaYFC03nZwxVsZ4edeZgaPGq5zp+a2gtVd61l7ZgRPaM2/d75vxqqsiveUCnKd7GLp83IC2dYU3xa0dheJNeRW2AQu6fr6bpcr6m1nIXqYBfyh3P4wZEoqz+9mRqxPH/yummRqWlAaamQiL1AvkEqdAUz2JF5Yv4r4n9CuGsCosBcEhkDIQluhBxOFT7IDeZK3jBpcY4Y+rT/o3J4u/+ZeDUY1FIcROEnWOGowPsibD1TCZWYzJ8qbnZELJ9zgc08A9XsDYllbwxNLEHBi0dJiPlrpuFPg7KMFQx6WksKKjZ/QNnO1QgsGQacuPdNhopyttWBIR2LuQJVLGMDkViUY14yRg8jlDgrKYTEh7ic7F8SHkAS3bAhlxhmVGsM5Cuf1W2r8BpmdSSFKMLQenJPuwOBdzIZbCYYqq3TqgHWZGWEFsykwVRkKxc/AkLjUawwaMakLfld6NZcPUoXxXIcJfCUYjizUYEh1P4tjADtGTqoxZi6m1VRqHCARMdGRgiEMOBNpweCknKCEDPmDCwMtGNzaMabbgtHSjG9hqyB7NXmFxamwIYOB2HlqNQ4oSuFeUFMcO001GMqEUxQoWGHH+qIajN3e+W4fSorjXxepwQFVdpzDLMtcQOzxCqudK8qEXOTktzFkFy30/nqN6Rss6TS9wglKi2IAY96Pocf0FfEEHO3spLcMFjB2fJF8XGZraDziI5JdLGu82fkeouuJqOscU4lnF7RonL5J8NMml1QTWd3DidHkZgOT/BUlx8s376r61GU86IJ+dv7l2nMu0rUu4tmP/qTzN2qsfhPOngqt5jaDaTiz6no22lauzavnUSQzMWT5VGiWYtc4jqPBumfr3ktkgcMHq/MOfHzWCCZeb/LAIZTHaK/Eqrep6zzp5+7Vt2/fJzFEhudqPIsopq7vX87H/7NqmkpPjaN/Bl40MBGXMZeAF1mmj18DVrSQJsXYh9OawreFrIisH+pN5f4mA7F6ZzEOB+GWaM1A/8bWNbb8K5hppg6nnf9H2MUCNt5s+pl82dJIpsAdN5CSINtv/GvvW//LqK7SSKLmdm1309Xv4mjDfb48Fngs8FjgscBjgV9ggT922seYkg4aQwAAAABJRU5ErkJggg==);
+  background-size: 40rpx;
+  background-repeat: no-repeat;
+  background-position: 16rpx 15rpx;
+}
+.credentials-container .credentials .cover .camera:active {
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 35rpx;
+  background-color: #0259e9;
+}
+.title {
+  font-weight: bold;
+  font-size: 32rpx;
+  color: #444;
+  margin-top: 25rpx;
+  margin-bottom: 25rpx;
+  padding-left: 10rpx;
+}
+.list {
+  border-radius: 20rpx;
+  background-color: #fff;
+  overflow: hidden;
+}
+.btn {
+  background-color: #2074fd;
+  color: #fff;
+  margin-top: 40rpx;
+  border: none;
+  padding-top: 8rpx;
+  padding-bottom: 8rpx;
+}
+.btn::after {
+  border: none;
+}
+.btn:active {
+  background-color: #0259e9;
+}
+.remark {
+  color: #a0a0a0;
+  font-size: 28rpx;
+  margin-top: 30rpx;
+  line-height: 1.7;
+  bottom: 60rpx;
+}
+

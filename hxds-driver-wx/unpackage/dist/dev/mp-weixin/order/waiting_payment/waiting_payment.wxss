@@ -1,0 +1,69 @@
+page {
+  font-family: Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+  background-color: #eef0f6;
+}
+.waiting-container {
+  background-color: #fff;
+  padding-top: 100rpx;
+  padding-bottom: 80rpx;
+  margin-bottom: 25rpx;
+}
+.waiting-container .payment {
+  display: block;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.waiting-container .title {
+  font-size: 38rpx;
+  font-weight: bold;
+  color: #444;
+  text-align: center;
+  margin-top: 30rpx;
+}
+.waiting-container .second {
+  text-align: center;
+  margin-top: 15rpx;
+  color: #444;
+  font-size: 34rpx;
+}
+.waiting-container .btn {
+  background-color: #2074fd;
+  color: #fff;
+  width: 65%;
+  margin-top: 80rpx;
+}
+.waiting-container .btn::after {
+  border: none;
+}
+.waiting-container .btn:active {
+  background-color: #0259e9;
+}
+.notice-container {
+  background-color: #fff;
+  padding-left: 20rpx;
+  padding-right: 30rpx;
+  padding-bottom: 80rpx;
+}
+.notice-container .notice-title {
+  text-align: center;
+  font-size: 32rpx;
+  padding-top: 50rpx;
+  padding-bottom: 20rpx;
+}
+.notice-container .notice-title text {
+  margin-left: 5rpx;
+}
+.notice-container .desc {
+  font-size: 28rpx;
+  color: #a0a0a0;
+  line-height: 1.7;
+  padding-left: 25rpx;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  display: flex;
+}
+.notice-container .desc .num {
+  margin-right: 10rpx;
+}
+

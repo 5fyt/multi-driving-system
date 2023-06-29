@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "新司机注册",
+  "enablePullDownRefresh": false,
+  "navigationStyle": "custom",
+  "backgroundColor": "#EEF0F6",
+  "usingComponents": {
+    "u-toast": "/uview-ui/components/u-toast/u-toast"
+  }
+}

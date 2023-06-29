@@ -1,0 +1,19 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: hxds-bff-driver
+  data:
+    redis:
+      timeout: 10s
+      lettuce:
+        pool:
+          max-active: 200
+          max-wait: -1ms
+          max-idle: 10
+          min-idle: 0
+sa-token:
+  is-print: false
+  token-name: token
+  is-read-body: false
+  is-read-cookie: false

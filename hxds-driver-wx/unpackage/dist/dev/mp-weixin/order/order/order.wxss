@@ -1,0 +1,198 @@
+page {
+  font-family: Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+}
+.customer-container {
+  display: flex;
+  padding-left: 50rpx;
+  padding-right: 50rpx;
+  padding-top: 50rpx;
+}
+.customer-container .info {
+  margin-left: 30rpx;
+}
+.customer-container .info .customer-name {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 10rpx;
+}
+.customer-container .info .customer-tel {
+  font-size: 28rpx;
+  color: #555;
+  margin-bottom: 10rpx;
+  letter-spacing: 1rpx;
+}
+.address-container {
+  font-size: 28rpx;
+  color: #555;
+  line-height: 1.6;
+  margin-top: 35rpx;
+  padding-left: 50rpx;
+  padding-right: 50rpx;
+}
+.address-container .from {
+  display: flex;
+}
+.address-container .from::before {
+  display: block;
+  content: '';
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 10rpx;
+  background-color: #34ba97;
+  margin-top: 14rpx;
+  margin-right: 17rpx;
+}
+.address-container .dashed-line {
+  height: 30rpx;
+  border-left: #ccc 2rpx dashed;
+  margin-top: 5rpx;
+  margin-bottom: 5rpx;
+  margin-left: 10rpx;
+}
+.address-container .to {
+  display: flex;
+}
+.address-container .to::before {
+  display: block;
+  content: '';
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 10rpx;
+  background-color: #ff9d5b;
+  margin-top: 14rpx;
+  margin-right: 17rpx;
+}
+.order-container {
+  padding: 25rpx 30rpx;
+  margin-top: 30rpx;
+  border-top: solid 1rpx #e0e0e0;
+}
+.order-container view {
+  line-height: 60rpx;
+  height: 60rpx;
+  color: #555;
+  font-size: 28rpx;
+  display: flex;
+}
+.setion-title {
+  background-color: #eef0f6;
+  padding: 25rpx 30rpx;
+  display: flex;
+}
+.setion-title image {
+  width: 32rpx;
+  height: auto;
+  margin-top: 9rpx;
+  margin-right: 12rpx;
+}
+.setion-title text {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #555;
+}
+.section-content {
+  padding: 20rpx 20rpx;
+}
+.section-content .item {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: solid 1rpx #e0e0e0;
+  padding: 25rpx 20rpx 25rpx 20rpx;
+}
+.section-content .item:last-child {
+  border-bottom: none;
+}
+.section-content .item .left {
+  border-left: solid 7rpx #38b3d4;
+  padding-left: 20rpx;
+}
+.section-content .item .left .item-title {
+  display: block;
+  font-size: 28rpx;
+  color: #555;
+  margin-bottom: 15rpx;
+}
+.section-content .item .left .item-desc {
+  display: block;
+  font-size: 26rpx;
+  color: #b0b0b0;
+}
+.section-content .item .right {
+  color: #555;
+  font-size: 28rpx;
+}
+.section-content .content-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 25rpx 20rpx;
+}
+.section-content .content-container .content {
+  display: block;
+  font-size: 28rpx;
+  color: #555;
+  margin-bottom: 30rpx;
+}
+.section-content .content-container .content:last-child {
+  margin-bottom: 0;
+}
+.section-content .content-container .content text {
+  color: #555;
+  font-weight: bold;
+  margin-right: 3rpx;
+}
+.section-content .content-container .content .red {
+  color: #ff3b3b;
+}
+.section-content .content-container .img {
+  width: 150rpx;
+  height: auto;
+}
+.section-content .remark-container {
+  padding: 20rpx;
+}
+.section-content .remark-container .remark-rate {
+  display: flex;
+}
+.section-content .remark-container .remark-rate .photo {
+  margin-right: 15rpx;
+}
+.section-content .remark-container .remark-rate .rate {
+  flex-grow: 1;
+  margin-top: 8rpx;
+  display: flex;
+  justify-content: space-between;
+  color: #1aa4ec;
+}
+.section-content .remark-container .remark {
+  color: #444;
+  line-height: 40rpx;
+  margin-top: 20rpx;
+}
+.operate-container {
+  background-color: #eef0f6;
+  padding: 45rpx 0 0 0;
+}
+.operate-container .operate {
+  text-align: center;
+  font-size: 26rpx;
+  color: #2074fd;
+}
+.contact-container {
+  background-color: #eef0f6;
+  padding: 45rpx 50rpx 45rpx 50rpx;
+  text-align: center;
+  font-size: 26rpx;
+  color: #777;
+}
+.contact-container .contact {
+  margin-bottom: 20rpx;
+}
+.appeal-title {
+  color: #fea802;
+  font-weight: bold;
+  font-size: 40rpx;
+  text-align: center;
+  padding: 45rpx 0 30rpx 0;
+}
+

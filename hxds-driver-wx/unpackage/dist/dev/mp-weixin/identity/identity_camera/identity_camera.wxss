@@ -1,0 +1,40 @@
+page {
+  font-family: Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+}
+.camera,
+.image {
+  width: 100%;
+  height: 480rpx;
+}
+.operate-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 50rpx;
+}
+.operate-container .btn {
+  width: 40%;
+  margin: 0;
+}
+.operate-container .btn::after {
+  border: none;
+}
+.operate-container .btn:first-child {
+  margin-right: 30rpx;
+}
+.notice-container {
+  padding: 40rpx 60rpx;
+}
+.notice-container .notice {
+  font-size: 40rpx;
+  color: #444;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 15rpx;
+}
+.notice-container .desc {
+  display: block;
+  font-size: 32rpx;
+  color: #a0a0a0;
+  line-height: 1.7;
+}
+

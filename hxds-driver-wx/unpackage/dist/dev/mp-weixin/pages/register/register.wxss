@@ -1,0 +1,124 @@
+page {
+  background-color: #eef0f6;
+  height: 100%;
+  font-family: Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+}
+.page {
+  padding-bottom: 70rpx;
+}
+.top {
+  width: 100%;
+}
+.location-container {
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 25rpx 30rpx;
+  border-radius: 10rpx;
+  position: relative;
+  top: -40rpx;
+  box-shadow: #e0e0e0 0px 2px 8px 0px;
+  margin-bottom: 50rpx;
+}
+.location-container .left {
+  display: flex;
+  font-size: 28rpx;
+  color: #555;
+}
+.location-container .left .location {
+  width: 30rpx;
+  margin-top: 6rpx;
+  margin-right: 5rpx;
+}
+.location-container .right {
+  font-size: 28rpx;
+  color: #555;
+}
+.info-container {
+  background-color: #fff;
+  border-radius: 10rpx;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 25rpx;
+  margin-bottom: 80rpx;
+}
+.info-container .title-container {
+  text-align: center;
+  position: relative;
+  margin-bottom: 25rpx;
+}
+.info-container .title-container .title-bg {
+  width: 380rpx;
+  margin-top: -29rpx;
+}
+.info-container .title-container .title {
+  color: #444;
+  text-align: center;
+  display: block;
+  width: 100%;
+  position: absolute;
+  top: -14rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+.info-container .list {
+  margin: 0 40rpx;
+  font-size: 28rpx;
+  color: #999;
+  line-height: 1.7;
+}
+.info-container .list .item {
+  margin-bottom: 10rpx;
+  display: flex;
+}
+.info-container .list .item text {
+  margin-right: 15rpx;
+}
+.info-container .list .complex-item {
+  display: flex;
+  line-height: 1;
+  border-bottom: solid 1rpx #e5e5e5;
+  padding-bottom: 35rpx;
+  padding-top: 35rpx;
+}
+.info-container .list .complex-item:first-child {
+  padding-top: 0;
+}
+.info-container .list .complex-item:last-child {
+  border-bottom: none;
+}
+.info-container .list .complex-item .left {
+  font-size: 90rpx;
+  color: #d5d5d5;
+  font-weight: bold;
+  margin-right: 25rpx;
+}
+.info-container .list .complex-item .right .item-title {
+  font-weight: bold;
+  color: #444;
+  display: block;
+  font-size: 34rpx;
+  margin-top: 8rpx;
+  margin-bottom: 14rpx;
+}
+.info-container .list .complex-item .right .item-desc {
+  color: #999;
+  display: block;
+  font-size: 28rpx;
+}
+.btn {
+  width: 85%;
+  background-color: #2074fd;
+  color: #fff;
+}
+.btn::after {
+  border: none;
+}
+.btn:active {
+  background-color: #0259e9;
+}
+

@@ -1,0 +1,32 @@
+{
+  "groups": [
+    {
+      "name": "tengxun.cloud",
+      "type": "com.xiaoyao.hxds.storage.properties.TengXunProperties",
+      "sourceType": "com.xiaoyao.hxds.storage.properties.TengXunProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "tengxun.cloud.bucket",
+      "type": "java.lang.String",
+      "sourceType": "com.xiaoyao.hxds.storage.properties.TengXunProperties"
+    },
+    {
+      "name": "tengxun.cloud.region",
+      "type": "java.lang.String",
+      "sourceType": "com.xiaoyao.hxds.storage.properties.TengXunProperties"
+    },
+    {
+      "name": "tengxun.cloud.secret-id",
+      "type": "java.lang.String",
+      "sourceType": "com.xiaoyao.hxds.storage.properties.TengXunProperties"
+    },
+    {
+      "name": "tengxun.cloud.secret-key",
+      "type": "java.lang.String",
+      "sourceType": "com.xiaoyao.hxds.storage.properties.TengXunProperties"
+    }
+  ],
+  "hints": []
+}

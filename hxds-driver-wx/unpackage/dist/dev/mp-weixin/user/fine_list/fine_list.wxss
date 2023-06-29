@@ -1,0 +1,125 @@
+page {
+  font-family: Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+  background-color: #eef0f6;
+}
+.tab-container {
+  height: 62px;
+  box-sizing: border-box;
+  padding-top: 8px;
+  background-color: white;
+  margin-bottom: 10px;
+}
+.fine-container {
+  background-color: white;
+  padding: 30rpx 30rpx;
+  margin-bottom: 10px;
+}
+.fine-container .top {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: solid 1rpx #e0e0e0;
+  padding-bottom: 25rpx;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+}
+.fine-container .top .fine-id {
+  color: #a0a0a0;
+  font-size: 30rpx;
+}
+.fine-container .top .fine-status {
+  font-size: 30rpx;
+}
+.fine-container .top .green {
+  color: #46b68f;
+}
+.fine-container .top .red {
+  color: #f54e4d;
+}
+.fine-container .summary {
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+  display: flex;
+  border-bottom: solid 1rpx #e0e0e0;
+}
+.fine-container .summary .letter {
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 10rpx;
+  text-align: center;
+  font-size: 46rpx;
+  color: white;
+  font-weight: bold;
+  line-height: 90rpx;
+  margin-right: 25rpx;
+}
+.fine-container .summary .gray {
+  background-color: #6f768e;
+}
+.fine-container .summary .orange {
+  background-color: #FFA600;
+}
+.fine-container .summary .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.fine-container .summary .content .remark {
+  font-size: 32rpx;
+  color: #444;
+  line-height: 1;
+}
+.fine-container .summary .content .date {
+  font-size: 28rpx;
+  color: #a0a0a0;
+  line-height: 1;
+}
+.fine-container .bottom {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 30rpx;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+}
+.fine-container .bottom .amount {
+  font-size: 34rpx;
+  margin-top: 10rpx;
+  color: #555;
+  display: flex;
+}
+.fine-container .bottom .amount image {
+  width: 40rpx;
+  margin-right: 10rpx;
+  margin-top: 7rpx;
+}
+.fine-container .bottom .amount text {
+  color: #f54e4d;
+}
+.fine-container .bottom .pay-btn {
+  font-size: 30rpx;
+  background-color: #44c762;
+  border: none;
+  border-radius: 10rpx;
+  color: white;
+  line-height: 2.3;
+  margin: 0;
+}
+.fine-container .bottom .pay-btn::after {
+  border: none;
+}
+.fine-container .bottom .pay-btn:active {
+  background-color: #38ba55;
+}
+.money {
+  position: relative;
+  font-size: 70rpx;
+  color: #f54e4d;
+  font-weight: bold;
+}
+.money .close {
+  position: absolute;
+  right: 30rpx;
+  top: 0rpx;
+}
+

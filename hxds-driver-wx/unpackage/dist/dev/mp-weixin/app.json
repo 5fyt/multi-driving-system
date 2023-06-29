@@ -1,0 +1,123 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/register/register",
+    "pages/workbench/workbench",
+    "pages/order_list/order_list",
+    "pages/message_list/message_list",
+    "pages/mine/mine",
+    "pages/message/message"
+  ],
+  "subPackages": [
+    {
+      "root": "identity",
+      "pages": [
+        "filling/filling",
+        "identity_camera/identity_camera",
+        "face_camera/face_camera"
+      ]
+    },
+    {
+      "root": "user",
+      "pages": [
+        "account/account",
+        "settings/settings",
+        "fine_list/fine_list"
+      ]
+    },
+    {
+      "root": "rule",
+      "pages": [
+        "bill_rule/bill_rule",
+        "user_rule/user_rule",
+        "cancel_rule/cancel_rule",
+        "user_guide/user_guide"
+      ]
+    },
+    {
+      "root": "wallet",
+      "pages": [
+        "recharge/recharge",
+        "wallet/wallet"
+      ]
+    },
+    {
+      "root": "execution",
+      "pages": [
+        "move/move"
+      ]
+    },
+    {
+      "root": "order",
+      "pages": [
+        "order/order",
+        "enter_fee/enter_fee",
+        "order_bill/order_bill",
+        "waiting_payment/waiting_payment"
+      ]
+    }
+  ],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "华夏代驾",
+    "navigationBarBackgroundColor": "#2074FD",
+    "backgroundColor": "#FFFFFF"
+  },
+  "tabBar": {
+    "color": "#444",
+    "selectedColor": "#1297DB",
+    "list": [
+      {
+        "text": "工作台",
+        "pagePath": "pages/workbench/workbench",
+        "iconPath": "static/tab_bar/workbench_1.png",
+        "selectedIconPath": "static/tab_bar/workbench_2.png"
+      },
+      {
+        "text": "我的订单",
+        "pagePath": "pages/order_list/order_list",
+        "iconPath": "static/tab_bar/order_1.png",
+        "selectedIconPath": "static/tab_bar/order_2.png"
+      },
+      {
+        "text": "消息中心",
+        "pagePath": "pages/message_list/message_list",
+        "iconPath": "static/tab_bar/message_1.png",
+        "selectedIconPath": "static/tab_bar/message_2.png"
+      },
+      {
+        "text": "个人中心",
+        "pagePath": "pages/mine/mine",
+        "iconPath": "static/tab_bar/people_1.png",
+        "selectedIconPath": "static/tab_bar/people_2.png"
+      }
+    ]
+  },
+  "plugins": {
+    "ocr-plugin": {
+      "version": "3.1.5",
+      "provider": "wx4418e3e031e551be"
+    },
+    "WechatSI": {
+      "version": "0.3.5",
+      "provider": "wx069ba97219f66d99"
+    },
+    "routePlan": {
+      "version": "1.0.18",
+      "provider": "wx50b5593e81dd937a"
+    },
+    "chooseLocation": {
+      "version": "1.0.9",
+      "provider": "wx76a9a06e5b4e693e"
+    }
+  },
+  "requiredBackgroundModes": [
+    "location"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "请允许地图服务使用GPS定位"
+    }
+  },
+  "usingComponents": {}
+}

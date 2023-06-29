@@ -1,0 +1,128 @@
+@import url('../../style.less');
+page {
+	font-family: @ff-1;
+	background-color: @bc-9;
+}
+.tab-container {
+	height: 62px;
+	box-sizing: border-box;
+	padding-top: 8px;
+	background-color: white;
+	margin-bottom: 10px;
+}
+
+.fine-container {
+	background-color: white;
+	padding: 30rpx 30rpx;
+	margin-bottom: 10px;
+	.top {
+		display: flex;
+		justify-content: space-between;
+		border-bottom: solid 1rpx @bc-1;
+		padding-bottom: 25rpx;
+		padding-left: 10rpx;
+		padding-right: 10rpx;
+		.fine-id {
+			color: @fc-3;
+			font-size: 30rpx;
+		}
+		.fine-status {
+			font-size: 30rpx;
+		}
+		.green {
+			color: @fc-12;
+		}
+		.red {
+			color: @fc-10;
+		}
+	}
+	.summary {
+		padding-top: 30rpx;
+		padding-bottom: 30rpx;
+		padding-left: 10rpx;
+		padding-right: 10rpx;
+		display: flex;
+		border-bottom: solid 1rpx @bc-1;
+		.letter {
+			width: 90rpx;
+			height: 90rpx;
+			border-radius: 10rpx;
+			text-align: center;
+			font-size: 46rpx;
+			color: white;
+			font-weight: bold;
+			line-height: 90rpx;
+			margin-right: 25rpx;
+		}
+		.gray{
+			background-color: @bgc-3;
+		}
+		.orange{
+			background-color: @bgc-9;
+		}
+		.content {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			.remark {
+				font-size: 32rpx;
+				color: @fc-1;
+				line-height: 1;
+				// font-weight: bold;
+			}
+			.date {
+				font-size: 28rpx;
+				color: @fc-3;
+				line-height: 1;
+			}
+		}
+	}
+	.bottom {
+		display: flex;
+		justify-content: space-between;
+		padding-top: 30rpx;
+		padding-left: 10rpx;
+		padding-right: 10rpx;
+		.amount {
+			font-size: 34rpx;
+			margin-top: 10rpx;
+			color: @fc-2;
+			display: flex;
+			image{
+				width: 40rpx;
+				margin-right: 10rpx;
+				margin-top: 7rpx;
+			}
+			text{
+				color: @fc-10;
+			}
+		}
+		.pay-btn {
+			font-size: 30rpx;
+			background-color: @btnc-5;
+			border: none;
+			border-radius: 10rpx;
+			color: white;
+			line-height: 2.3;
+			margin: 0;
+			&::after {
+				border: none;
+			}
+			&:active {
+				background-color: @btnac-5;
+			}
+		}
+	}
+}
+.money{
+	position: relative;
+	font-size: 70rpx;
+	color: @fc-10;
+	font-weight: bold;
+	.close{
+		position: absolute;
+		right: 30rpx;
+		top: 0rpx;
+	}
+	
+}

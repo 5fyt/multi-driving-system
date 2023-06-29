@@ -1,0 +1,7 @@
+server:
+  port: 9300
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: vm:8848

@@ -1,0 +1,11 @@
+server:
+  port: 9200
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 117.50.197.154:38848
+  datasource:
+    url: jdbc:mysql://117.50.197.154:33306/hxds?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: qwertyuiop

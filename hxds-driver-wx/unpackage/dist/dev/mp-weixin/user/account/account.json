@@ -1,0 +1,13 @@
+{
+  "navigationBarTitleText": "账号与安全",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "u-cell-group": "/uview-ui/components/u-cell-group/u-cell-group",
+    "u-cell-item": "/uview-ui/components/u-cell-item/u-cell-item",
+    "u-toast": "/uview-ui/components/u-toast/u-toast",
+    "u-top-tips": "/uview-ui/components/u-top-tips/u-top-tips",
+    "u-keyboard": "/uview-ui/components/u-keyboard/u-keyboard",
+    "u-icon": "/uview-ui/components/u-icon/u-icon",
+    "u-message-input": "/uview-ui/components/u-message-input/u-message-input"
+  }
+}

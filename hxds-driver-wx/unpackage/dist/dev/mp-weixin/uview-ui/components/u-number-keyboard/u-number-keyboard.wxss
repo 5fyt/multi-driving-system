@@ -1,0 +1,31 @@
+.u-keyboard.data-v-6bcbb7e8 {
+  position: relative;
+  z-index: 1003;
+}
+.u-keyboard-grids.data-v-6bcbb7e8 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.u-keyboard-grids-item.data-v-6bcbb7e8 {
+  flex: 0 0 33.3333333333%;
+  text-align: center;
+  font-size: 50rpx;
+  color: #333;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 110rpx;
+  font-weight: 500;
+}
+.u-bg-gray.data-v-6bcbb7e8 {
+  background-color: #e4e7ed;
+}
+.u-keyboard-back.data-v-6bcbb7e8 {
+  font-size: 36rpx;
+}
+.u-keyboard-hover.data-v-6bcbb7e8 {
+  background-color: #e7e6eb;
+}
+

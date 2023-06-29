@@ -1,0 +1,11 @@
+server:
+  port: 9100
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: vm:8848
+  data:
+    redis:
+      host: vm
+      port: 6379
