@@ -10,10 +10,16 @@ page {
 	background-color: @bgc-2;
 	display: flex;
 	padding: 40rpx 40rpx;
-
+  height: 120px;
+  .avatarBtn{
+    border-radius: 50%;
+    height: 70px;
+    width: 70px;
+  }
 	.photo {
-		width: 120rpx;
+		width: 127rpx;
 		border-radius: 60rpx;
+    margin-left: -14px;
 	}
 	.summary {
 		margin-left: 30rpx;
@@ -22,9 +28,13 @@ page {
 			display: flex;
 			padding-top: 10rpx;
 			.name {
-				font-size: 40rpx;
+				font-size: 30rpx;
 				color: @fc-5;
 				font-weight: bold;
+        .nameInp {
+          width: 80px;
+          padding-top: 4px;
+        }
 			}
 			.auth-icon {
 				width: 36rpx;

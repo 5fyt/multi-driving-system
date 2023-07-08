@@ -1,0 +1,24 @@
+{
+  "groups": [
+    {
+      "name": "wx",
+      "type": "com.xiaoyao.hxds.customer.properties.WXProperties",
+      "sourceType": "com.xiaoyao.hxds.customer.properties.WXProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "wx.appid",
+      "type": "java.lang.String",
+      "description": "小程序appid",
+      "sourceType": "com.xiaoyao.hxds.customer.properties.WXProperties"
+    },
+    {
+      "name": "wx.secret",
+      "type": "java.lang.String",
+      "description": "小程序secret",
+      "sourceType": "com.xiaoyao.hxds.customer.properties.WXProperties"
+    }
+  ],
+  "hints": []
+}

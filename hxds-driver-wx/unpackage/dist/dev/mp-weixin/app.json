@@ -107,12 +107,16 @@
       "provider": "wx50b5593e81dd937a"
     },
     "chooseLocation": {
-      "version": "1.0.9",
+      "version": "1.0.10",
       "provider": "wx76a9a06e5b4e693e"
     }
   },
   "requiredBackgroundModes": [
     "location"
+  ],
+  "requiredPrivateInfos": [
+    "startLocationUpdate",
+    "onLocationChange"
   ],
   "permission": {
     "scope.userLocation": {

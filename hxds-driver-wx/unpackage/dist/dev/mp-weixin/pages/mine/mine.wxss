@@ -9,10 +9,17 @@ page {
   background-color: #595e72;
   display: flex;
   padding: 40rpx 40rpx;
+  height: 120px;
+}
+.summary-container .avatarBtn {
+  border-radius: 50%;
+  height: 70px;
+  width: 70px;
 }
 .summary-container .photo {
-  width: 120rpx;
+  width: 127rpx;
   border-radius: 60rpx;
+  margin-left: -14px;
 }
 .summary-container .summary {
   margin-left: 30rpx;
@@ -23,9 +30,13 @@ page {
   padding-top: 10rpx;
 }
 .summary-container .summary .row .name {
-  font-size: 40rpx;
+  font-size: 30rpx;
   color: #e5e5e5;
   font-weight: bold;
+}
+.summary-container .summary .row .name .nameInp {
+  width: 80px;
+  padding-top: 4px;
 }
 .summary-container .summary .row .auth-icon {
   width: 36rpx;

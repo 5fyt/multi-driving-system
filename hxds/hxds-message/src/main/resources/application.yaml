@@ -1,0 +1,15 @@
+server:
+  port: 9800
+spring:
+  application:
+    name: hxds-message
+  rabbitmq:
+    host: vm
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: /
+  cloud:
+    nacos:
+      discovery:
+        server-addr: vm:8848

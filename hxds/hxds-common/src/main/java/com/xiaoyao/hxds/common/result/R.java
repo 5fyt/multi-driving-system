@@ -3,6 +3,7 @@ package com.xiaoyao.hxds.common.result;
 import lombok.NonNull;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class R extends HashMap<String, Object> {
     public static final String CODE = "code";
@@ -18,22 +19,16 @@ public class R extends HashMap<String, Object> {
         return this;
     }
 
-    public String getStr(String key) {
-        return String.valueOf(super.get(key));
-    }
-
-    public Integer getInt(String key) {
-        return (Integer) super.get(key);
-    }
-
-    public Long getLong(String key) {
-        return (Long) super.get(key);
-    }
-
     public static R ok() {
         return new R()
                 .put(CODE, SUCCESS_CODE)
                 .put(MESSAGE, SUCCESS_MESSAGE);
+    }
+
+    public static R ok(Map<String, Object> map) {
+        R r = ok();
+        r.putAll(map);
+        return r;
     }
 
     public static R fail(int code, String message) {

@@ -3,7 +3,7 @@ package com.xiaoyao.hxds.storage.service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
-import java.util.List;
+import java.util.Map;
 
 public interface StorageService {
     /**
@@ -14,5 +14,10 @@ public interface StorageService {
     /**
      * 删除文件
      */
-    void delete(List<String> keys);
+    void delete(Map<String, Object> param);
+
+    /**
+     * 生成临时访问链接
+     */
+    String getTempUrl(Map<String, Object> param);
 }

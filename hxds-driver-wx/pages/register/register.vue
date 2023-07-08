@@ -112,7 +112,7 @@ export default {
              
                const token=res.data.token
                uni.setStorageSync('token',token)
-               uni.setStorageSync('realAuth',1) 
+               uni.setStorageSync('realAuth',0) 
                //请求成功后执行的回调函数
                that.$refs.uToast.show({
                					title: '注册成功',

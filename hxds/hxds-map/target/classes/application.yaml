@@ -1,0 +1,16 @@
+server:
+  port: 9600
+spring:
+  application:
+    name: hxds-map
+  cloud:
+    nacos:
+      discovery:
+        server-addr: vm:8848
+  data:
+    redis:
+      host: vm
+      port: 6379
+tengxun:
+  map:
+    key: XY6BZ-GI4L7-ETKXJ-HE4QX-WDDW7-YJFAC

@@ -1,0 +1,18 @@
+{
+  "groups": [
+    {
+      "name": "tengxun.map",
+      "type": "com.xiaoyao.hxds.map.properties.MapProperties",
+      "sourceType": "com.xiaoyao.hxds.map.properties.MapProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "tengxun.map.key",
+      "type": "java.lang.String",
+      "description": "腾讯地图key",
+      "sourceType": "com.xiaoyao.hxds.map.properties.MapProperties"
+    }
+  ],
+  "hints": []
+}

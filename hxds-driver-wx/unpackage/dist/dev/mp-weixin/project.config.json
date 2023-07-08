@@ -6,8 +6,11 @@
   },
   "setting": {
     "urlCheck": false,
-    "minified": true,
+    "es6": false,
     "postcss": true,
+    "minified": true,
+    "newFeature": true,
+    "bigPackageSizeSupport": true,
     "babelSetting": {
       "ignore": [],
       "disablePlugins": [],

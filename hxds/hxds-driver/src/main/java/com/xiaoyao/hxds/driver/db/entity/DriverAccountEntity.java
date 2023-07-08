@@ -1,6 +1,5 @@
 package com.xiaoyao.hxds.driver.db.entity;
 
-import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Getter;
 import lombok.Setter;
@@ -10,13 +9,12 @@ import java.time.LocalDateTime;
 
 @Getter
 @Setter
-@TableName("driver_account")
+@TableName("tb_driver_account")
 public class DriverAccountEntity {
 
     /**
      * 主键ID
      */
-    @TableId
     private Long id;
 
     /**
@@ -43,6 +41,11 @@ public class DriverAccountEntity {
      * 是否上传人脸照片
      */
     private Boolean archive;
+
+    /**
+     * 账户状态，1为正常，2为禁用，3为降低接单量
+     */
+    private Byte accountStatus;
 
     /**
      * 姓名

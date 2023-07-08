@@ -10,8 +10,8 @@ mybatis-plus:
     banner: false
   mapper-locations: classpath:/mapper/*.xml
 wx:
-  appid: wx12cbb3ff22e82097          # 替换
-  secret: 7f7053c2c78230828863727d9c67b63f        # 替换
+  appid: wx12cbb3ff22e82097
+  secret: 14513551292e990934caaa92840004c9
 tengxun:
   cloud:
     secret-id: AKIDufQzNZYJtFMGwPdcMuDHLRc2LSOAj4DA

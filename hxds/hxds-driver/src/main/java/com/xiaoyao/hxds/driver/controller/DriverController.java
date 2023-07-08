@@ -1,16 +1,11 @@
 package com.xiaoyao.hxds.driver.controller;
 
-import com.xiaoyao.hxds.common.dto.bff.driver.service.ArchiveDTO;
-import com.xiaoyao.hxds.common.dto.bff.driver.service.AuthenticateDTO;
-import com.xiaoyao.hxds.common.dto.bff.driver.service.DriverRegisterDTO;
-import com.xiaoyao.hxds.common.dto.driver.service.LoginDTO;
 import com.xiaoyao.hxds.common.result.R;
 import com.xiaoyao.hxds.driver.service.DriverService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Map;
 
 @RestController
 @RequestMapping("/driver")
@@ -19,30 +14,45 @@ public class DriverController {
     private final DriverService driverService;
 
     @PostMapping("/register")
-    public R register(@RequestBody DriverRegisterDTO dto) {
-        String driverID = driverService.register(dto);
-        return R.ok()
-                .put("id", driverID);
+    public R register(@RequestBody Map<String, Object> param) {
+        long driverID = driverService.register(param);
+        return R.ok().put("id", driverID);
     }
 
     @PostMapping("/authenticate")
-    public R authenticate(@RequestBody AuthenticateDTO dto) {
-        driverService.authenticate(dto);
+    public R authenticate(@RequestBody Map<String, Object> param) {
+        driverService.authenticate(param);
         return R.ok();
     }
 
     @PostMapping("/archive")
-    public R archive(@RequestBody ArchiveDTO dto) {
-        driverService.archive(dto.getDriverID(), dto.getImage());
+    public R archive(@RequestBody Map<String, Object> param) {
+        driverService.archive(param);
         return R.ok();
     }
 
     @PostMapping("/login")
     public R login(String code) {
-        LoginDTO dto = driverService.login(code);
-        return R.ok()
-                .put("id", dto.getId())
-                .put("status", dto.getStatus())
-                .put("archive", dto.isArchive() ? 1 : 0);
+        return R.ok(driverService.login(code));
+    }
+
+    @GetMapping("/profile")
+    public R profile(long driverID) {
+        return R.ok(driverService.profile(driverID));
+    }
+
+    @GetMapping("/settings")
+    public R settings(long driverID) {
+        return R.ok(driverService.settings(driverID));
+    }
+
+    @PostMapping("/search-drivers")
+    public R searchDriver(@RequestBody Map<String, Object> param) {
+        return R.ok(driverService.searchDrivers(param));
+    }
+
+    @GetMapping("/authenticate-info")
+    public R authenticateInfo(long driverID) {
+        return R.ok(driverService.getAuthenticateInfo(driverID));
     }
 }

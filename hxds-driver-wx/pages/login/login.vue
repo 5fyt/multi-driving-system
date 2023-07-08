@@ -47,14 +47,14 @@ export default {
             }else{
               let {token,archive,status } =res.data
               uni.setStorageSync('token',token)
-              uni.setStorageSync('status',status)
+              uni.setStorageSync('realAuth',status)
               that.$refs.uToast.show({
                 title:'登入成功',
                 type:'success',
                 callback:function(res){
                   uni.setStorageSync('workStatus','停止接单')
                   //如果还没有上传身份证等信息就跳转到录入信息页面
-                  if(status===0&&archive===0){
+                  if(status===0){
                     uni.redirectTo({
                       url:'../../identity/filling/filling?mode=create'
                     })

@@ -213,12 +213,13 @@
 </template>
 
 <script>
+import QQMapWX from '../../lib/qqmap-wx-jssdk.min';
 let plugin = requirePlugin('WechatSI');
 let dayjs = require('dayjs');
 export default {
 	data() {
 		return {
-			reviewAuth: uni.getStorageSync('realAuth') == 3,
+			reviewAuth: uni.getStorageSync('realAuth') == 1,
 			hour: 0,
 			income: 0,
 			orders: 0,
@@ -289,13 +290,39 @@ export default {
 		};
 	},
 	methods: {
-		
+    isListen(bool){
+      let that =this
+      if(bool){
+        that.listenIcon='../../static/workbench/service-icon-3.png',
+        that.listenText= '收听订单',
+        that.listenStyle= 'color:#46B68F'
+      }else{
+        that.listenIcon='../../static/workbench/service-icon-7.png',
+        that.listenText= '不听听订单',
+        that.listenStyle= 'color:#FF4D4D'
+      }
+    }
 	},
 	onLoad: function() {
 		
 	},
 	onShow: function() {
-		
+    let that = this
+		if(!that.reviewAuth){
+       that.ajax(that.url.workbenchData,'GET',null,function(res){
+         const {income,order,drivingTime,isAutoAccept,isAutoListen}=res.data
+         that.income=income
+         that.order=order
+         that.drivingTime=drivingTime
+         that.settings.listenService=isAutoListen
+         that.settings.autoAccept=isAutoAccept
+         //保存听单和接单
+         uni.setStorageSync('settings',that.settings)
+         //判断是听订单还是不听订单
+         that.isListen(that.settings.listenService)
+       })      
+    }
+   
 	},
 	onHide: function() {
 		

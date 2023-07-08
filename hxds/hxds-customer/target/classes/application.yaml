@@ -1,0 +1,21 @@
+server:
+  port: 9500
+spring:
+  application:
+    name: hxds-customer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: vm:8848
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://vm:3306/hxds?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+mybatis-plus:
+  global-config:
+    banner: false
+  mapper-locations: classpath:/mapper/*.xml
+wx:
+  appid: wx12cbb3ff22e82097
+  secret: 14513551292e990934caaa92840004c9

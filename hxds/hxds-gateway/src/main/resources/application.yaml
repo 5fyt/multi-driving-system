@@ -10,6 +10,10 @@ spring:
           predicates:
             - Path=/driver/**
           uri: lb://hxds-bff-driver
+        - id: hxds-bff-customer
+          predicates:
+            - Path=/customer/**
+          uri: lb://hxds-bff-customer
       globalcors:
         cors-configurations:
           '[/**]':

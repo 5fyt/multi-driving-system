@@ -27,6 +27,20 @@
           "query": "mode=create",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/mine/mine",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/workbench/workbench",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

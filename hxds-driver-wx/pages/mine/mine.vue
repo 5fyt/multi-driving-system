@@ -1,10 +1,16 @@
 <template>
 	<view class="page">
 		<view class="summary-container">
-			<image :src="photo" mode="widthFix" class="photo"></image>
+		<!-- 	<image :src="photo" mode="widthFix" class="photo" ></image> -->
+      <button  open-type="chooseAvatar" @chooseavatar="onChooseAvatar" class="avatarBtn">
+        <image class="photo" :src="photo" mode="widthFix"></image>
+      </button>
+     
 			<view class="summary">
 				<view class="row">
-					<text class="name">{{ name }}</text>
+					<view class="name">
+           <input type="nickname" class="nameInp" placeholder="请输入昵称"/>
+          </view>
 					<image
 						:src="realAuth ? '../../static/mine/icon-1.png' : '../../static/mine/icon-2.png'"
 						mode="widthFix"
@@ -117,6 +123,7 @@ export default {
 			},
 			name: '',
 			photo: '',
+      show:false,
 			realAuth: false,
 			years: 0,
 			level: 0,
@@ -129,10 +136,87 @@ export default {
 		};
 	},
 	methods: {
-		
+    onChooseAvatar(e){
+      let that= this
+      const{avatarUrl}=e.detail
+      that.photo=avatarUrl      
+      console.log(e.detail)
+    },
+    //在线客服
+		serviceHandle(){
+      //点击震动
+      uni.vibrateShort({})
+      uni.makePhoneCall({
+        phoneNumber:'10086'
+      })
+    },
+    //清理缓存
+    clearHandle(){
+      uni.vibrateShort({})
+      uni.showModal({
+        title:'提示消息',
+        content:'清理缓存',
+        success:function(res){
+         if(res.confirm){
+            uni.vibrateShort({})
+            //清理缓存
+            let caches=uni.getStorageInfoSync()
+            for(let cache of caches.keys){
+              if(cache==='token'||cache==='realAuth'){
+                continue;
+              }
+              uni.removeStorageSync(cache)
+            }
+            //清理保存的临时文件
+            uni.getSavedFileList({
+              success:function(res){
+                for(let file of res.fileList){
+                  let path = file.filePath
+                  uni.removeSavedFile({
+                    filePath:path,
+                    success:function(res){
+                      console.log('清理文件成功')
+                    }
+                  })
+                }
+              }
+            })
+            setTimeout(function(){
+              uni.showToast({
+                title:'清理完成'
+              })
+            },600)
+         }
+        }
+      })
+    }
 	},
 	onShow: function() {
-		
+		let that =this 
+    that.ajax(that.url.driverBaseInfo,'GET',null,function(res){
+      const {nickname,photo,status,createTime,level,totalOrder,appeal,weekOrder,balance,weekComment}=res.data
+      that.name=nickname
+      that.photo=photo
+      that.realAuth=uni.getStorageSync('realAuth')===0
+      //代驾几年
+      let initTime=dayjs(createTime,'YYYY-MM-DD')
+      let nowTime=dayjs()
+      that.years=nowTime.diff(initTime,'years')
+      that.level=level
+      if(that.level<10){
+        that.levelName='初级代驾'
+      }else if(that.level<30){
+        that.levelName='中级代驾'
+      }else if(that.level<50){
+        that.levelName='高级代驾'
+      }else{
+        that.levelName='王牌代驾'
+      }
+      that.totalOrder=totalOrder
+      that.weekComment=weekComment
+      that.balance=balance
+      that.appeal=appeal
+    })
 	},
 	onHide: function() {
 		

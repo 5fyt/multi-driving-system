@@ -37,14 +37,16 @@ Vue.prototype.url = {
     uploadCosPrivateFile:`${baseUrl}/driver/upload-authentication-photo`,
     deleteCosPrivateFile:`${baseUrl}/driver/delete-authentication-photo`,
     updateDriverAuth:`${baseUrl}/driver/authenticate `,
-    createDriverFaceModal:`${baseUrl}/driver/archive `,
-    login:`${baseUrl}/driver/login`
+    createDriverFaceModal:`${baseUrl}/driver/archive `,//创建人脸模型
+    login:`${baseUrl}/driver/login`,
+    driverBaseInfo:`${baseUrl}/driver/profile`,//司机的基本信息
+    workbenchData:`${baseUrl}/driver/workbench `,//工作台信息
+    driverAuthInfo:`${baseUrl}/driver/authentication-info`
 }
-
 Vue.prototype.tencent = {
 map: {
 		referer: "华夏代驾",
-		key: "腾讯位置服务的密钥"
+		key: "XY6BZ-GI4L7-ETKXJ-HE4QX-WDDW7-YJFAC"
 	}
 }
 

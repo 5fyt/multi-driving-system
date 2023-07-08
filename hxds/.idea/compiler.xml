@@ -2,25 +2,34 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
-      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="hxds-gateway" />
-        <module name="hxds-driver" />
+        <module name="hxds-customer" />
+        <module name="hxds-message" />
         <module name="hxds-bff-driver" />
         <module name="hxds-common" />
+        <module name="hxds-order" />
+        <module name="hxds-bff-customer" />
+        <module name="hxds-gateway" />
+        <module name="hxds-map" />
+        <module name="hxds-driver" />
         <module name="hxds-storage" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="hxds-bff-customer" options="-parameters" />
       <module name="hxds-bff-driver" options="-parameters" />
       <module name="hxds-common" options="-parameters" />
+      <module name="hxds-customer" options="-parameters" />
       <module name="hxds-driver" options="-parameters" />
       <module name="hxds-gateway" options="-parameters" />
+      <module name="hxds-map" options="-parameters" />
+      <module name="hxds-message" options="-parameters" />
+      <module name="hxds-order" options="-parameters" />
       <module name="hxds-storage" options="-parameters" />
     </option>
   </component>

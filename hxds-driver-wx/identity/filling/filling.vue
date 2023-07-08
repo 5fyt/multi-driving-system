@@ -106,7 +106,7 @@
 			</u-cell-group>
 		</view>
 
-		<button class="btn" @tap="save" :disabled="realAuth == 3">保存信息</button>
+		<button class="btn" @tap="save" :disabled="realAuth == 2">保存信息</button>
 		<view class="remark">您每次提交实名信息之后，都需要工作人员严格审查，请等候1~3天，这期间您将无法接单，特此声明！</view>
 		<u-toast ref="uToast" />
 	</view>
@@ -146,7 +146,7 @@ export default {
 				tel: '19916022997',
 				email: '2977366691@qq.com',
 				shortEmail: '2977366691@qq.com',
-				mailAddress: '江西省抚州市',
+				mailAddress: '江西省抚州市',//收信地址
 				shortMailAddress: '江西省抚州市临川区',
 				contactName: '张大炮',
 				contactTel: '19930342245'
@@ -170,63 +170,96 @@ export default {
 		scanIdcardFront: function(resp) {
 		    let that = this;
 		    let detail = resp.detail;
-		    that.idcard.pid = detail.id.text;
-		    that.idcard.name = detail.name.text;
-		    that.idcard.sex = detail.gender.text;
-		    that.idcard.address = detail.address.text;
-		    //需要缩略身份证地址，文字太长页面显示不了
-		    that.idcard.shortAddress = detail.address.text.substr(0, 15) + '...';
-		    that.idcard.birthday = detail.birth.text;
-		    //OCR插件拍摄到的身份证正面照片存储地址
-		    that.idcard.idcardFront = detail.image_path;
-		    //让身份证View标签加载身份证正面照片
-		    that.cardBackground[0] = detail.image_path;
-		    //发送Ajax请求，上传身份证正面照片
-		    that.uploadCos(that.url.uploadCosPrivateFile, detail.image_path, 'driverAuth', function(resp) {
-		        let data = JSON.parse(resp.data);
-		        //身份证照片的云端URL地址
-            let key = data.key
-		        that.currentImg['idcardFront'] = key; //页面持久层保存身份证云端URL地址
-            that.keys.push(key)
-		    });
+        if(detail.id.text&&
+        detail.name.text&&
+        detail.gender.text&&
+        detail.address.text&&
+        detail.birth.text&&
+        detail.image_path){
+          that.idcard.pid = detail.id.text;
+          that.idcard.name = detail.name.text;
+          that.idcard.sex = detail.gender.text;
+          that.idcard.address = detail.address.text;
+          //需要缩略身份证地址，文字太长页面显示不了
+          that.idcard.shortAddress = detail.address.text.substr(0, 15) + '...';
+          that.idcard.birthday = detail.birth.text;
+          //OCR插件拍摄到的身份证正面照片存储地址
+          that.idcard.idcardFront = detail.image_path;
+          //让身份证View标签加载身份证正面照片
+          that.cardBackground[0] = detail.image_path;
+          //发送Ajax请求，上传身份证正面照片
+          that.uploadCos(that.url.uploadCosPrivateFile, detail.image_path, 'driverAuth', function(resp) {
+              let data = JSON.parse(resp.data);
+              //身份证照片的云端URL地址
+              let key = data.key
+              that.currentImg['idcardFront'] = key; //页面持久层保存身份证云端URL地址
+              that.keys.push(key)
+          });
+        }else{
+          uni.showToast({
+            title:'请将身份证正面信息全部扫描',
+            icon:'error'
+          })
+        }
+		   
 		},
     //身份证背面
     scanIdcardBack(res){
        let that=this
        let {image_path,valid_date}=res.detail
-       that.cardBackground[1]=image_path
-       let effectiveDate=valid_date.text.split('-')[1]
-       that.idcard.expiration=dayjs(effectiveDate).format('YYYY-MM-DD')
-       that.uploadCos(that.url.uploadCosPrivateFile, image_path, 'driverAuth', function(resp) {
-           let data = JSON.parse(resp.data);
-              //身份证照片的云端URL地址
-           let key = data.key
-           that.currentImg['idcardBack'] = key; //页面持久层保存身份证云端URL地址
-           /*
-            * 本页面所有上传到云端的照片云端URL地址都保存到数组中，因为用户可以反复拍摄身份证
-            * 照片，那么之前上传的照片到最后应该从云端删除掉。页面提交完整实名认证信息的时候，
-            * 需要比对cosImg数组中哪些照片不需要了，让云端删除不需要的证件照片
-            */
-           that.keys.push(key)
-       });
+       if(image_path&&valid_date){
+           that.cardBackground[1]=image_path
+           let effectiveDate=valid_date.text.split('-')[1]
+           that.idcard.expiration=dayjs(effectiveDate).format('YYYY-MM-DD')
+           that.uploadCos(that.url.uploadCosPrivateFile, image_path, 'driverAuth', function(resp) {
+               let data = JSON.parse(resp.data);
+                  //身份证照片的云端URL地址
+               let key = data.key
+               that.currentImg['idcardBack'] = key; //页面持久层保存身份证云端URL地址
+               /*
+                * 本页面所有上传到云端的照片云端URL地址都保存到数组中，因为用户可以反复拍摄身份证
+                * 照片，那么之前上传的照片到最后应该从云端删除掉。页面提交完整实名认证信息的时候，
+                * 需要比对cosImg数组中哪些照片不需要了，让云端删除不需要的证件照片
+                */
+               that.keys.push(key)
+           });   
+       }else{
+         uni.showToast({
+           title:'请将身份证背面信息全部扫描',
+           icon:'error'
+         })
+       }
+      
     },
     //驾驶证正面
     scanDrcardFront: function(resp) {
         let that = this;
         let detail = resp.detail;
-        that.drcard.issueDate = detail.issue_date.text; //初次领证日期
-        that.drcard.carClass = detail.car_class.text; //准驾车型
-        that.drcard.validFrom = detail.valid_from.text; //驾驶证起始有效期
-        that.drcard.validTo = detail.valid_to.text; //驾驶证截止有效期
-        that.drcard.drcardFront = detail.image_path;
-        that.cardBackground[3] = detail.image_path;
-        //把驾驶证正面照片上传到云端
-        that.uploadCos(that.url.uploadCosPrivateFile, detail.image_path, 'driverAuth', function(resp) {
-            let data = JSON.parse(resp.data);
-            let key=data.key
-            that.currentImg['drcardFront'] = key;
-            that.keys.push(key)
-        });
+        if(detail.issue_date.text&&
+        detail.car_class.text&&
+        detail.valid_from.text&&
+        detail.valid_to.text&&
+        detail.image_path){
+          that.drcard.issueDate = detail.issue_date.text; //初次领证日期
+          that.drcard.carClass = detail.car_class.text; //准驾车型
+          that.drcard.validFrom = detail.valid_from.text; //驾驶证起始有效期
+          that.drcard.validTo = detail.valid_to.text; //驾驶证截止有效期
+          that.drcard.drcardFront = detail.image_path;
+          that.cardBackground[3] = detail.image_path;
+          //把驾驶证正面照片上传到云端
+          that.uploadCos(that.url.uploadCosPrivateFile, detail.image_path, 'driverAuth', function(resp) {
+              let data = JSON.parse(resp.data);
+              let key=data.key
+              that.currentImg['drcardFront'] = key;
+              that.keys.push(key)
+          });  
+        }else{
+          uni.showToast({
+            title:'请将驾驶证信息全部扫描',
+            icon:'error'
+          })
+        }
+        
     },
    //上传照片
     updatePhoto(type,path){
@@ -350,8 +383,8 @@ export default {
                                title: '资料提交成功',
                                type: 'success',
                                callback: function() {
-                                   uni.setStorageSync('realAuth', 3); //更新小程序Storage
-                                   that.realAuth = 3; // realAuth 1代表成功注册，2表示上传了六张图片，3表示提交所有的信息
+                                   uni.setStorageSync('realAuth', 2); //更新小程序Storage
+                                   that.realAuth = 2; // realAuth 1代表成功注册，2表示上传了六张图片，3表示提交所有的信息
                                    if (that.mode == 'create') {
                                        //TODO 提示新注册的司机采集面部数据
                                        uni.redirectTo({
@@ -382,8 +415,88 @@ export default {
 	},
 	onLoad: function(options) {
 		let that = this;
-        that.mode = options.mode;
-        console.log(options)
+    that.mode = options.mode;
+    console.log(options)
+    //mine 点击实名认证跳转到该页面，要将页面的数据回显到filling页面中的数据
+    if (uni.getStorageSync('realAuth') == 0) {
+        uni.showModal({
+            title: '提示信息',
+            content: '新注册的代驾司机请填写实名认证信息，并且上传相关证件照片',
+            showCancel: false
+        });
+    } else {
+        that.ajax(that.url.driverAuthInfo, 'GET', null, function(resp) {
+            let json = resp.data;
+            // console.log(json);
+            that.idcard.pid = json.idCardNumber;
+            that.idcard.name = json.name;
+            that.idcard.sex = json.gender;
+            that.idcard.birthday = json.birthday;
+            that.idcard.address = json.idCardAddress;
+            that.idcard.shortAddress = json.idCardAddress.substr(0, 15) + (json.idCardAddress.length > 15 ? '...' : '');
+            that.idcard.expiration = json.idCardExpireTime;
+            that.idcard.idcardFront = json.idCardFrontImage;
+            if (json.idCardFrontImage.length > 0) {
+                that.cardBackground[0] = json.idCardFrontImage;
+            }
+            that.idcard.idcardBack = json.idCardBackImage;
+            if (json.idCardBackImage.length > 0) {
+                that.cardBackground[1] = json.idCardBackImage;
+            }
+            that.idcard.idcardHolding = json.idCardHoldingImage;
+            if (json.idCardHoldingImage.length > 0) {
+                that.cardBackground[2] = json.idCardHoldingImage;
+            }
+            that.contact.tel = json.phone;
+            that.contact.email = json.email;
+            that.contact.shortEmail = json.email.substr(0, 25) + (json.email.length > 25 ? '...' : '');
+            that.contact.mailAddress = json.address;
+            that.contact.shortMailAddress = json.address.substr(0, 15) + (json.address.length > 15 ? '...' : '');
+            that.contact.contactName = json.emergencyName;
+            that.contact.contactTel = json.emergencyPhone;
+            that.drcard.carClass = json.driverCardType;
+            that.drcard.validTo = json.driverCardExpireTime;
+            that.drcard.issueDate = json.driverCardIssueTime;
+            that.drcard.drcardFront = json.driverCardFrontImage;
+            if (json.driverCardFrontImage.length > 0) {
+                that.cardBackground[3] = json.driverCardFrontImage;
+            }
+            that.drcard.drcardBack = json.driverCardBackImage;
+            if (json.driverCardBackImage.length > 0) {
+                that.cardBackground[4] = json.driverCardBackImage;
+            }
+            that.drcard.drcardHolding = json.driverCardHoldingImage;
+            if (json.driverCardHoldingImage.length > 0) {
+                that.cardBackground[5] = json.driverCardHoldingImage;
+            }
+            if (that.idcard.idcardFront.length > 0) {
+                that.keys.push(that.idcard.idcardFront);
+                that.currentImg['idcardFront'] = that.idcard.idcardFront;
+            }
+            if (that.idcard.idcardBack.length > 0) {
+                that.keys.push(that.idcard.idcardBack);
+                that.currentImg['idcardBack'] = that.idcard.idcardBack;
+            }
+            if (that.idcard.idcardHolding.length > 0) {
+                that.keys.push(that.idcard.idcardHolding);
+                that.currentImg['idcardHolding'] = that.idcard.idcardHolding;
+            }
+            if (that.drcard.drcardFront.length > 0) {
+                that.keys.push(that.drcard.drcardFront);
+                that.currentImg['drcardFront'] = that.drcard.drcardFront;
+            }
+            if (that.drcard.drcardBack.length > 0) {
+                that.keys.push(that.drcard.drcardBack);
+                that.currentImg['drcardBack'] = that.drcard.drcardBack;
+            }
+            if (that.drcard.drcardHolding.length > 0) {
+                that.keys.push(that.drcard.drcardHolding);
+                that.currentImg['drcardHolding'] = that.drcard.drcardHolding;
+            }
+        });
+    }
+        
+
 	}
 };
 </script>

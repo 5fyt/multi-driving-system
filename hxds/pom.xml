@@ -19,6 +19,11 @@
         <module>hxds-bff-driver</module>
         <module>hxds-common</module>
         <module>hxds-storage</module>
+        <module>hxds-order</module>
+        <module>hxds-customer</module>
+        <module>hxds-bff-customer</module>
+        <module>hxds-map</module>
+        <module>hxds-message</module>
     </modules>
 
     <properties>
@@ -31,6 +36,7 @@
         <mybatis-plus.version>3.5.3.1</mybatis-plus.version>
         <cos_api.version>5.6.133</cos_api.version>
         <tencentcloud-sdk-java.version>3.1.785</tencentcloud-sdk-java.version>
+        <sa-token.version>1.34.0</sa-token.version>
     </properties>
 
     <dependencyManagement>
@@ -68,6 +74,16 @@
                 <groupId>com.tencentcloudapi</groupId>
                 <artifactId>tencentcloud-sdk-java</artifactId>
                 <version>${tencentcloud-sdk-java.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.dev33</groupId>
+                <artifactId>sa-token-spring-boot3-starter</artifactId>
+                <version>${sa-token.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.dev33</groupId>
+                <artifactId>sa-token-dao-redis-jackson</artifactId>
+                <version>${sa-token.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
