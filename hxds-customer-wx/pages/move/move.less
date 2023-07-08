@@ -1,0 +1,73 @@
+@import url('../../style.less');
+page {
+	font-family: @ff-1;
+}
+.map {
+	width: 100%;
+}
+.location {
+	width: 50rpx;
+	height: 50rpx;
+	position: absolute;
+	right: 45rpx;
+	bottom: 60rpx;
+}
+.panel {
+	position: absolute;
+	bottom: 70rpx;
+	width: 90%;
+	left: 5%;
+	background-color: rgba(255, 255, 255, 0.95);
+	border-radius: 8rpx;
+	border: solid 1rpx @bc-1;
+	padding: 30rpx 35rpx;
+	box-sizing: border-box;
+	.info {
+		display: flex;
+		padding: 0 0 30rpx 0;
+		.label {
+			font-size: 34rpx;
+			color: @fc-2;
+		}
+		.value {
+			font-weight: bolder !important;
+			font-size: 34rpx;
+			color: @fc-4;
+			margin: 0 5rpx;
+		}
+		.more{
+			position: absolute;
+			top: 30rpx;
+			right: 40rpx;
+			font-size: 34rpx;
+			color: @fc-4;
+		}
+	}
+	.opt{
+		display: flex;
+		justify-content: space-between;
+		.cancel-btn{
+			background-color: @btnc-3;
+			color: #fff;
+			width: 280rpx;
+			&::after {
+				border: none;
+			}
+			&:active{
+				background-color: @btnac-3;
+			}
+		}
+		.confirm-btn{
+			background-color: @btnc-1;
+			color: #fff;
+			width: 280rpx;
+			&::after {
+				border: none;
+			}
+			&:active{
+				background-color: @btnac-1;
+			}
+		}
+	}
+	
+}

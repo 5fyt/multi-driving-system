@@ -1,0 +1,95 @@
+@import url('../../style.less');
+page {
+	font-family: @ff-1;
+}
+.address-container {
+	height: 85px;
+	font-size: 28rpx;
+	color: @fc-2;
+	line-height: 1.6;
+	box-sizing: border-box;
+	padding: 25rpx 30rpx 25rpx 30rpx;
+	width: 750rpx;
+	background-color: rgba(255, 255, 255, 0.93);
+	position: absolute;
+	top: 0;
+	z-index: 1000;
+	.from {
+		display: flex;
+		&::before {
+			display: block;
+			content: '';
+			width: 20rpx;
+			height: 20rpx;
+			border-radius: 10rpx;
+			background-color: @bgc-7;
+			margin-top: 14rpx;
+			margin-right: 17rpx;
+		}
+	}
+	.dashed-line {
+		height: 25rpx;
+		border-left: @bc-5 2rpx dashed;
+		// background-color: red;
+		margin-top: 5rpx;
+		margin-bottom: 5rpx;
+		margin-left: 10rpx;
+	}
+	.to {
+		display: flex;
+		&::before {
+			display: block;
+			content: '';
+			width: 20rpx;
+			height: 20rpx;
+			border-radius: 10rpx;
+			background-color: @bgc-8;
+			margin-top: 14rpx;
+			margin-right: 17rpx;
+		}
+	}
+}
+.map {
+	width: 100%;
+}
+
+.panel {
+	box-sizing: border-box;
+	padding: 35rpx 30rpx 35rpx 30rpx;
+	width: 750rpx;
+	background-color: rgba(255, 255, 255, 0.93);
+	position: absolute;
+	bottom: 80rpx;
+	z-index: 1000;
+	.row {
+		display: flex;
+		justify-content: space-between;
+		.info {
+			display: flex;
+			font-size: 30rpx;
+			.value {
+				text {
+					color: @fc-10;
+					padding: 0 10rpx;
+					font-weight: bold;
+				}
+			}
+		}
+		.opt{
+			font-size: 30rpx;
+			color: @fc-4;
+		}
+	}
+	.btn{
+		background-color: @btnc-1;
+		color: #fff;
+		// width: 70%;
+		margin-top: 30rpx;
+		&::after {
+			border: none;
+		}
+		&:active{
+			background-color: @btnac-1;
+		}
+	}
+}

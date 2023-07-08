@@ -1,0 +1,149 @@
+{
+	"easycom": {
+		"^u-(.*)": "@/uview-ui/components/u-$1/u-$1.vue"
+	},
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/login/login",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "custom",
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+		},
+		{
+			"path": "pages/workbench/workbench",
+			"style": {
+				"navigationBarTitleText": "呼叫代驾",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/mine/mine",
+			"style": {
+				"navigationBarTitleText": "个人中心",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/message_list/message_list",
+			"style": {
+				"navigationBarTitleText": "消息中心",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/create_order/create_order",
+			"style": {
+				"navigationBarTitleText": "创建订单",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/car_list/car_list",
+			"style": {
+				"navigationBarTitleText": "车辆列表",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/move/move",
+			"style": {
+				"navigationBarTitleText": "司乘同显",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/voucher_list/voucher_list",
+			"style": {
+				"navigationBarTitleText": "代金券",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/order/order",
+			"style": {
+				"navigationBarTitleText": "代驾账单",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/add_car/add_car",
+			"style": {
+				"navigationBarTitleText": "添加车辆",
+				"enablePullDownRefresh": false
+			}
+
+		}
+		,{
+			"path": "pages/order_list/order_list",
+			"style": {
+				"navigationBarTitleText": "订单列表",
+				"enablePullDownRefresh": false
+			}
+		}
+	],
+	"subPackages": [{
+		"root": "rule",
+		"pages": [{
+				"path": "bill_rule/bill_rule",
+				"style": {
+					"navigationBarTitleText": "计费规则",
+					"enablePullDownRefresh": false
+				}
+			}, {
+				"path": "user_rule/user_rule",
+				"style": {
+					"navigationBarTitleText": "用户规则",
+					"enablePullDownRefresh": false
+				}
+			},
+			{
+				"path": "cancel_rule/cancel_rule",
+				"style": {
+					"navigationBarTitleText": "取消规则",
+					"enablePullDownRefresh": false
+				}
+			},
+			{
+				"path": "user_guide/user_guide",
+				"style": {
+					"navigationBarTitleText": "用户指南",
+					"enablePullDownRefresh": false
+				}
+			}
+		]
+	}],
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "华夏代驾",
+		"navigationBarBackgroundColor": "#2074FD",
+		"backgroundColor": "#FFFFFF"
+	},
+	"tabBar": {
+		"color": "#444",
+		"selectedColor": "#1297DB",
+		"list": [{
+				"text": "呼叫代驾",
+				"pagePath": "pages/workbench/workbench",
+				"iconPath": "static/tab_bar/workbench_1.png",
+				"selectedIconPath": "static/tab_bar/workbench_2.png"
+			},
+			{
+				"text": "消息中心",
+				"pagePath": "pages/message_list/message_list",
+				"iconPath": "static/tab_bar/message_1.png",
+				"selectedIconPath": "static/tab_bar/message_2.png"
+			},
+			{
+				"text": "个人中心",
+				"pagePath": "pages/mine/mine",
+				"iconPath": "static/tab_bar/people_1.png",
+				"selectedIconPath": "static/tab_bar/people_2.png"
+			}
+		]
+	}
+}

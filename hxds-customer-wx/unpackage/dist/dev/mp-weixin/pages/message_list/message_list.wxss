@@ -1,0 +1,56 @@
+page {
+  font-family: Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+  background-color: #eef0f6;
+  padding-bottom: 10rpx;
+}
+.message-container {
+  background-color: #fff;
+  margin: 40rpx 40rpx;
+  padding: 20rpx 30rpx;
+  border-radius: 10rpx;
+}
+.message-container .top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15rpx;
+}
+.message-container .top .title {
+  display: flex;
+}
+.message-container .top .title image {
+  width: 40rpx;
+  margin-top: 4rpx;
+  margin-right: 15rpx;
+}
+.message-container .top .title text {
+  color: #444;
+  font-size: 32rpx;
+}
+.message-container .top .date {
+  font-size: 32rpx;
+  color: #a0a0a0;
+}
+.message-container .content {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  font-size: 28rpx;
+  line-height: 1.7;
+  color: #a0a0a0;
+}
+.message-container .bottom {
+  display: flex;
+  justify-content: space-between;
+  border-top: solid 1rpx #e0e0e0;
+  margin-top: 20rpx;
+  padding-top: 20rpx;
+}
+.message-container .bottom text {
+  font-size: 28rpx;
+  color: #555;
+}
+.empty {
+  margin-top: 80rpx;
+}
+

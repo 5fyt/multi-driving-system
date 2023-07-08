@@ -1,0 +1,58 @@
+page {
+  font-family: Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+}
+.top {
+  width: 100%;
+  display: block;
+}
+.logo {
+  display: block;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50rpx;
+}
+.desc {
+  text-align: center;
+  color: #555;
+  margin-top: 20rpx;
+}
+.desc .name {
+  font-size: 38rpx;
+}
+.desc .version {
+  font-size: 30rpx;
+}
+.btn {
+  background-color: #2074fd;
+  color: #fff;
+  width: 70%;
+  margin-top: 200rpx;
+}
+.btn::after {
+  border: none;
+}
+.btn:active {
+  background-color: #0259e9;
+}
+.register-container {
+  text-align: center;
+  font-size: 30rpx;
+  color: #555;
+  margin-top: 30rpx;
+}
+.register-container .link {
+  color: #2074fd;
+  margin-left: 10rpx;
+}
+.remark {
+  display: block;
+  color: #a0a0a0;
+  font-size: 28rpx;
+  margin-left: 50rpx;
+  margin-right: 50rpx;
+  line-height: 1.7;
+  position: absolute;
+  bottom: 60rpx;
+}
+

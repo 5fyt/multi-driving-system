@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "创建订单",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "u-popup": "/uview-ui/components/u-popup/u-popup",
+    "u-count-down": "/uview-ui/components/u-count-down/u-count-down"
+  }
+}

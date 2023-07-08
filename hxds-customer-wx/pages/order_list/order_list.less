@@ -1,0 +1,119 @@
+@import url('../../style.less');
+page {
+	font-family: @ff-1;
+	background-color: #eef0f6;
+}
+.order-list {
+	.month {
+		display: flex;
+		justify-content: space-between;
+		padding: 20rpx 30rpx;
+		text {
+			font-size: 34rpx;
+			font-weight: bold;
+			color: @fc-1;
+		}
+		image {
+			width: 38rpx;
+		}
+	}
+	.order {
+		background-color: #fff;
+		margin-bottom: 20rpx;
+		&:last-child{
+			margin-bottom: 0;
+		}
+		.top {
+			display: flex;
+			justify-content: space-between;
+			padding-top: 20px;
+			.date {
+				background-color: @bgc-10;
+				color: #fff;
+				padding-left: 40rpx;
+				padding-right: 30rpx;
+				padding-top: 13rpx;
+				padding-bottom: 13rpx;
+				border-top-right-radius: 100rpx;
+				border-bottom-right-radius: 100rpx;
+				font-size: 32rpx;
+				font-weight: bold;
+			}
+			.amount-status {
+				padding-right: 30rpx;
+				padding-top: 10rpx;
+				.amount {
+					font-size: 32rpx;
+					font-weight: bold;
+					color: @fc-1;
+					margin-right: 35rpx;
+				}
+				.status {
+					font-size: 30rpx;
+					color: @fc-2;
+					font-weight: bold;
+				}
+				.green{
+					color: @fc-21;
+				}
+				.red{
+					color: @fc-19;
+				}
+				.orange{
+					color: @fc-20;
+				}
+			}
+		}
+		.content {
+			padding-top: 40rpx;
+			padding-bottom: 30rpx;
+			.from {
+				display: flex;
+				margin-bottom: 25rpx;
+				font-size: 30rpx;
+				color: @fc-1;
+				padding: 0 40rpx;
+				&::before {
+					display: block;
+					content: '';
+					width: 20rpx;
+					height: 20rpx;
+					border-radius: 10rpx;
+					background-color: @bgc-7;
+					margin-top: 14rpx;
+					margin-right: 17rpx;
+				}
+			}
+			.to {
+				display: flex;
+				margin-bottom: 25rpx;
+				font-size: 30rpx;
+				color: @fc-1;
+				padding: 0 40rpx;
+				&::before {
+					display: block;
+					content: '';
+					width: 20rpx;
+					height: 20rpx;
+					border-radius: 10rpx;
+					background-color: @bgc-8;
+					margin-top: 14rpx;
+					margin-right: 17rpx;
+				}
+			}
+			.desc{
+				display: flex;
+				justify-content: space-between;
+				padding-left: 40rpx;
+				padding-right: 25rpx;
+				text{
+					font-size: 30rpx;
+					color: @fc-3;
+				}
+				.rate{
+					margin-top: 5rpx;
+				}
+			}
+		}
+	}
+}

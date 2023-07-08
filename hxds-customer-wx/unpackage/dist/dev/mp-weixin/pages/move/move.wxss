@@ -1,0 +1,72 @@
+page {
+  font-family: Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+}
+.map {
+  width: 100%;
+}
+.location {
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  right: 45rpx;
+  bottom: 60rpx;
+}
+.panel {
+  position: absolute;
+  bottom: 70rpx;
+  width: 90%;
+  left: 5%;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 8rpx;
+  border: solid 1rpx #e0e0e0;
+  padding: 30rpx 35rpx;
+  box-sizing: border-box;
+}
+.panel .info {
+  display: flex;
+  padding: 0 0 30rpx 0;
+}
+.panel .info .label {
+  font-size: 34rpx;
+  color: #555;
+}
+.panel .info .value {
+  font-weight: bolder !important;
+  font-size: 34rpx;
+  color: #2074fd;
+  margin: 0 5rpx;
+}
+.panel .info .more {
+  position: absolute;
+  top: 30rpx;
+  right: 40rpx;
+  font-size: 34rpx;
+  color: #2074fd;
+}
+.panel .opt {
+  display: flex;
+  justify-content: space-between;
+}
+.panel .opt .cancel-btn {
+  background-color: #ff5b5b;
+  color: #fff;
+  width: 280rpx;
+}
+.panel .opt .cancel-btn::after {
+  border: none;
+}
+.panel .opt .cancel-btn:active {
+  background-color: #ff4141;
+}
+.panel .opt .confirm-btn {
+  background-color: #2074fd;
+  color: #fff;
+  width: 280rpx;
+}
+.panel .opt .confirm-btn::after {
+  border: none;
+}
+.panel .opt .confirm-btn:active {
+  background-color: #0259e9;
+}
+

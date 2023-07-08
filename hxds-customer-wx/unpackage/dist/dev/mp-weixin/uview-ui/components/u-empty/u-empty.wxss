@@ -1,0 +1,19 @@
+.u-empty.data-v-2e22d22c {
+  display: flex;
+  flex-direction: row;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.u-image.data-v-2e22d22c {
+  margin-bottom: 20rpx;
+}
+.u-slot-wrap.data-v-2e22d22c {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20rpx;
+}
+

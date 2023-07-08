@@ -1,0 +1,43 @@
+@import url('../../style.less');
+page {
+	font-family: @ff-1;
+}
+.page {
+	padding: 10rpx 30rpx 0 30rpx;
+	.none{
+		display: block;
+		width: 50%;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 80rpx;
+		margin-bottom: 40rpx;
+	}
+	.btn {
+		background-color: @btnc-1;
+		color: #fff;
+		width: 100%;
+		margin-top: 50rpx;
+		font-size: 30rpx;
+		line-height: 3;
+		&::after {
+			border: none;
+		}
+		&:active {
+			background-color: @btnac-1;
+		}
+	}
+	.row {
+		border-bottom: solid 1rpx @bc-1;
+		padding: 30rpx 20rpx;
+		display: flex;
+		justify-content: space-between;
+		.icon {
+			vertical-align: -4rpx;
+			margin-right: 10rpx;
+		}
+		.car-type {
+		}
+		.car-plate {
+		}
+	}
+}

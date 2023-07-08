@@ -1,0 +1,30 @@
+page {
+  font-family: Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+}
+.page {
+  padding: 10rpx 30rpx 0 30rpx;
+}
+.page .btn {
+  background-color: #2074fd;
+  color: #fff;
+  width: 100%;
+  margin-top: 50rpx;
+  font-size: 30rpx;
+  line-height: 3;
+}
+.page .btn::after {
+  border: none;
+}
+.page .btn:active {
+  background-color: #0259e9;
+}
+.page .desc {
+  font-size: 28rpx;
+  text-align: center;
+  margin-top: 30rpx;
+}
+.page .desc text {
+  color: #2074fd;
+  text-decoration: underline;
+}
+

@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "消息中心",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "u-icon": "/uview-ui/components/u-icon/u-icon",
+    "u-empty": "/uview-ui/components/u-empty/u-empty"
+  }
+}

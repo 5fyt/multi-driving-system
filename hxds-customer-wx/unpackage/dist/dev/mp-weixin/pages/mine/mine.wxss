@@ -1,0 +1,35 @@
+page {
+  background-color: #eef0f6;
+  font-family: Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+}
+.summary-container {
+  background-color: #fff;
+  padding: 40rpx;
+  display: flex;
+  margin-bottom: 25rpx;
+}
+.summary-container .summary {
+  margin-left: 25rpx;
+  flex-grow: 1;
+}
+.summary-container .summary .name {
+  font-size: 40rpx;
+  color: #555;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+}
+.summary-container .summary .level {
+  background-color: #f7f7f9;
+  display: inline-block;
+  padding: 8rpx 20rpx 5rpx 10rpx;
+  border-radius: 100rpx;
+}
+.summary-container .summary .level .icon {
+  vertical-align: -5rpx;
+}
+.summary-container .summary .level text {
+  font-size: 26rpx;
+  margin-left: 10rpx;
+  color: #555;
+}
+

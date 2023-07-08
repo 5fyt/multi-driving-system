@@ -1,0 +1,117 @@
+page {
+  font-family: Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+  background-color: #eef0f6;
+}
+.order-list .month {
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx 30rpx;
+}
+.order-list .month text {
+  font-size: 34rpx;
+  font-weight: bold;
+  color: #444;
+}
+.order-list .month image {
+  width: 38rpx;
+}
+.order-list .order {
+  background-color: #fff;
+  margin-bottom: 20rpx;
+}
+.order-list .order:last-child {
+  margin-bottom: 0;
+}
+.order-list .order .top {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+}
+.order-list .order .top .date {
+  background-color: #2074fd;
+  color: #fff;
+  padding-left: 40rpx;
+  padding-right: 30rpx;
+  padding-top: 13rpx;
+  padding-bottom: 13rpx;
+  border-top-right-radius: 100rpx;
+  border-bottom-right-radius: 100rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+.order-list .order .top .amount-status {
+  padding-right: 30rpx;
+  padding-top: 10rpx;
+}
+.order-list .order .top .amount-status .amount {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #444;
+  margin-right: 35rpx;
+}
+.order-list .order .top .amount-status .status {
+  font-size: 30rpx;
+  color: #555;
+  font-weight: bold;
+}
+.order-list .order .top .amount-status .green {
+  color: #34ba97;
+}
+.order-list .order .top .amount-status .red {
+  color: #ff3b3b;
+}
+.order-list .order .top .amount-status .orange {
+  color: #fea802;
+}
+.order-list .order .content {
+  padding-top: 40rpx;
+  padding-bottom: 30rpx;
+}
+.order-list .order .content .from {
+  display: flex;
+  margin-bottom: 25rpx;
+  font-size: 30rpx;
+  color: #444;
+  padding: 0 40rpx;
+}
+.order-list .order .content .from::before {
+  display: block;
+  content: '';
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 10rpx;
+  background-color: #34ba97;
+  margin-top: 14rpx;
+  margin-right: 17rpx;
+}
+.order-list .order .content .to {
+  display: flex;
+  margin-bottom: 25rpx;
+  font-size: 30rpx;
+  color: #444;
+  padding: 0 40rpx;
+}
+.order-list .order .content .to::before {
+  display: block;
+  content: '';
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 10rpx;
+  background-color: #ff9d5b;
+  margin-top: 14rpx;
+  margin-right: 17rpx;
+}
+.order-list .order .content .desc {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 40rpx;
+  padding-right: 25rpx;
+}
+.order-list .order .content .desc text {
+  font-size: 30rpx;
+  color: #a0a0a0;
+}
+.order-list .order .content .desc .rate {
+  margin-top: 5rpx;
+}
+

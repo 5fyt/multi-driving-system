@@ -1,0 +1,58 @@
+page {
+  font-family: Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+  background-color: #eef0f6;
+  padding-bottom: 10rpx;
+}
+.tabs {
+  background-color: #fff;
+  box-sizing: border-box;
+  height: 60px;
+  padding-top: 20rpx;
+}
+.voucher {
+  background-color: #fff;
+  display: flex;
+  margin: 30rpx 30rpx 0 30rpx;
+}
+.voucher .red {
+  background-color: #f56c6c !important;
+}
+.voucher .green {
+  background-color: #32b374 !important;
+}
+.voucher .orange {
+  background-color: #e6a23c !important;
+}
+.voucher .left {
+  padding: 20rpx 0rpx;
+  width: 250rpx;
+  background-color: #5f94e0;
+}
+.voucher .left .row {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  margin: 13rpx 0;
+  position: relative;
+}
+.voucher .left .row .amount {
+  font-size: 60rpx;
+  font-weight: bold;
+}
+.voucher .left .row .desc {
+  font-size: 24rpx;
+}
+.voucher .right {
+  box-sizing: border-box;
+  padding: 15rpx 25rpx;
+  width: 550rpx;
+}
+.voucher .right .row {
+  margin: 15rpx 0;
+}
+.voucher .right .row .desc {
+  font-size: 24rpx;
+  color: #555;
+  line-height: 1.3;
+}
+

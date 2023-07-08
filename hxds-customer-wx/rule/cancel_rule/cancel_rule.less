@@ -1,0 +1,36 @@
+@import url("../../style.less");
+page{
+	font-family: @ff-1;
+}
+.page {
+	padding: 50rpx 40rpx 70rpx 40rpx;
+}
+.item {
+	display: flex;
+	font-size: 32rpx;
+	color: @fc-1;
+	line-height: 1;
+	margin-top: 40rpx;
+	margin-bottom: 20rpx;
+	&::before {
+		content: '';
+		display: block;
+		width: 10rpx;
+		height: 32rpx;
+		background-color: @fc-13;
+		margin-right: 15rpx;
+		border-radius: 3rpx;
+	}
+}
+.desc {
+	font-size: 28rpx;
+	color: @fc-3;
+	line-height: 1.7;
+	padding-left: 25rpx;
+	padding-top: 10rpx;
+	padding-bottom: 10rpx;
+	display: flex;
+	.num{
+		margin-right: 10rpx;
+	}
+}
