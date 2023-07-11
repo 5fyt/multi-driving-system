@@ -100,7 +100,7 @@
           				<text>{{ newOrder.endPlace }}</text>
           			</view>
           		</view>
-          		<button :class="!canAcceptOrder ? 'disabled-btn' : 'accept-btn'" @tap="acceptHandle(item)">立即抢单</button>
+          		<button :class="!canAcceptOrder ? 'disabled-btn' : 'accept-btn'" @tap="acceptHandle(newOrder)">立即抢单</button>
           	</view>
           </view>
         </template>
@@ -323,10 +323,12 @@ export default {
       return timer
     },
     //手动抢单
-    acceptHandle(item){
+    acceptHandle(newOrder){
       let that=this
       that.canAcceptOrder=true
-      that.ajax(that.url.acceptOrder,'POST',{orderID:item.orderID},function(res){
+      console.log(newOrder.orderID)
+      that.ajax(that.url.acceptOrder,'POST',{orderID:newOrder.orderID},function(res){
+        that.canAcceptOrder=false
         const {result}=res.data
          that.audio=uni.createInnerAudioContext()
         if(result){
@@ -340,7 +342,7 @@ export default {
 
             that.audio=null
             // that.ajax(that.url.deleteDriverLocation,'POST',null,function(){})
-            that.executeOrder.id=that.newOrder.orderID
+            that.executeOrder.id=newOrder.orderID
             that.newOrder=null
             clearInterval(that.reciveNewOrderTimer)
             that.reciveNewOrderTimer=null
@@ -355,7 +357,7 @@ export default {
               if(!that.accepting){
                 that.canAcceptOrder=false
                 if(that.newOrderList.length>0){
-                  that.showNewOrder(that,item)
+                  that.showNewOrder(that)
                 }else{
                   that.newOrder=null
                 }
@@ -364,11 +366,12 @@ export default {
           }
         })
     },
-   
+ 
+
     //显示订单列表
-    showNewOrder(that,item){
+    showNewOrder(that){
       that.playFlag=true
-      that.canAcceptOrder=false
+      
       // console.log(that.newOrderList)
       // that.newAutoOrder=that.newOrderList.find((item,id)=>id===0)
       let arrList=[]
@@ -384,62 +387,65 @@ export default {
           
         }else{
           if(that.settings.autoAccept){
+            that.canAcceptOrder=false
             console.log(that.newAutoOrder.orderID)
-             that.ajax(that.url.acceptOrder,'POST',{orderID:that.newAutoOrder.orderID},function(res){
-               const {result}=res.data
-               console.log(result)
-               if(result){
-                
-                 uni.showToast({
-                   title:'接单成功'
-                 })
-                 that.audio=uni.createInnerAudioContext()
-                 that.audio.src='/static/voice/voice_3.mp3'
-                 that.audio.play()
-                 //音频结束后
-                 that.audio.onEnded(function(){
-             
-                   that.audio=null
-                   that.ajax(that.url.stopOrder,'POST',null,function(){})
-                   that.executeOrder.id=that.newAutoOrder.orderID
-                   that.newAutoOrder=null
-                   clearInterval(that.reciveNewOrderTimer)
-                   that.reciveNewOrderTimer=null
-                   that.playFlag=false
-                   that.contentStyle=`width:750rpx;heigth:${that.windowHeight-200-0}px`;
-                 })
-               }else{
-                 //自动抢单失败
-                 that.audio=uni.createInnerAudioContext()
-                 that.audio.src="/static/voice/voice_4.mp3"
-                 that.audio.play()
-                 that.audio.onEnded(function(){
-                   that.playFlag=false
-                   if(that.newOrderList.length>0){
-                     that.showNewOrder(that) //执行递归调用
-                   }else{
-                     that.newOrder=null
-                   }
-                 })
-               }
-            })
-          }
-        }
-      }else{
+           that.ajax(that.url.acceptOrder,'POST',{orderID:that.newAutoOrder.orderID},function(res){
+              const {result}=res.data
+              console.log(result)
+              if(result){
+                uni.showToast({
+                  title:'接单成功'
+                })
+                that.audio=uni.createInnerAudioContext()
+                that.audio.src='/static/voice/voice_3.mp3'
+                that.audio.play()
+                //音频结束后
+                that.audio.onEnded(function(){
+                  that.audio=null
+                  that.ajax(that.url.stopOrder,'POST',null,function(){})
+                  that.executeOrder.id=that.newAutoOrder.orderID
+                  that.newAutoOrder=null
+                  clearInterval(that.reciveNewOrderTimer)
+                  that.reciveNewOrderTimer=null
+                  that.playFlag=false
+                  that.contentStyle=`width:750rpx;heigth:${that.windowHeight-200-0}px`;
+                })
+              }else{
+                //自动抢单失败
+                console.log('抢单失败')
+                that.audio=uni.createInnerAudioContext()
+                that.audio.src="/static/voice/voice_4.mp3"
+                that.audio.play()
+                that.audio.onEnded(function(){
+                  that.playFlag=false
+                  if(that.newOrderList.length>0){
+                    that.showNewOrder(that) //执行递归调用
+                  }else{
+                    that.newOrder=null
+                  }
+                })
+              }
+           })
+          }else{
          //每个订单都在页面停留3秒，等待司机手动抢单
           that.playFlag=false
             setTimeout(function(){
               if(!that.accepting){
-                that.canAcceptOrder=false
-                if(that.newOrderList.length>0){
-                  that.showNewOrder(that)
-                }else{
-                  that.newOrder=null
-                }
+                that.canAcceptOrder=true
+                clearInterval(that.reciveNewOrderTimer)
+                that.reciveNewOrderTimer=null
+                // if(that.newOrderList.length>0){
+                //   that.showNewOrder(that)
+                
+                // }else{
+                //   that.newOrder=null
+                // }
               }
               console.log(5)
             },5000)
           }
+        }
+      }
       },
     returnLocationHandle: function() {
     	  this.map.moveToLocation();
@@ -554,6 +560,7 @@ export default {
          that.rangeDistance=rangeDistance
          that.orientation=orientation
          that.orderDistance=orderDistance
+         console.log('d',rangeDistance)
          uni.setStorageSync('rangeDistance',rangeDistance)
          //保存听单和接单
          uni.setStorageSync('settings',JSON.stringify(that.settings))

@@ -522,12 +522,14 @@ var _default = {
       return timer;
     },
     //手动抢单
-    acceptHandle: function acceptHandle(item) {
+    acceptHandle: function acceptHandle(newOrder) {
       var that = this;
       that.canAcceptOrder = true;
+      console.log(newOrder.orderID);
       that.ajax(that.url.acceptOrder, 'POST', {
-        orderID: item.orderID
+        orderID: newOrder.orderID
       }, function (res) {
+        that.canAcceptOrder = false;
         var result = res.data.result;
         that.audio = uni.createInnerAudioContext();
         if (result) {
@@ -540,7 +542,7 @@ var _default = {
           that.audio.onEnded(function () {
             that.audio = null;
             // that.ajax(that.url.deleteDriverLocation,'POST',null,function(){})
-            that.executeOrder.id = that.newOrder.orderID;
+            that.executeOrder.id = newOrder.orderID;
             that.newOrder = null;
             clearInterval(that.reciveNewOrderTimer);
             that.reciveNewOrderTimer = null;
@@ -555,7 +557,7 @@ var _default = {
             if (!that.accepting) {
               that.canAcceptOrder = false;
               if (that.newOrderList.length > 0) {
-                that.showNewOrder(that, item);
+                that.showNewOrder(that);
               } else {
                 that.newOrder = null;
               }
@@ -565,9 +567,9 @@ var _default = {
       });
     },
     //显示订单列表
-    showNewOrder: function showNewOrder(that, item) {
+    showNewOrder: function showNewOrder(that) {
       that.playFlag = true;
-      that.canAcceptOrder = false;
+
       // console.log(that.newOrderList)
       // that.newAutoOrder=that.newOrderList.find((item,id)=>id===0)
       var arrList = [];
@@ -583,6 +585,7 @@ var _default = {
         //语音播报完成后，可以执行自动抢单
         if (false) {} else {
           if (that.settings.autoAccept) {
+            that.canAcceptOrder = false;
             console.log(that.newAutoOrder.orderID);
             that.ajax(that.url.acceptOrder, 'POST', {
               orderID: that.newAutoOrder.orderID
@@ -609,6 +612,7 @@ var _default = {
                 });
               } else {
                 //自动抢单失败
+                console.log('抢单失败');
                 that.audio = uni.createInnerAudioContext();
                 that.audio.src = "/static/voice/voice_4.mp3";
                 that.audio.play();
@@ -622,22 +626,26 @@ var _default = {
                 });
               }
             });
+          } else {
+            //每个订单都在页面停留3秒，等待司机手动抢单
+            that.playFlag = false;
+            setTimeout(function () {
+              if (!that.accepting) {
+                that.canAcceptOrder = true;
+                clearInterval(that.reciveNewOrderTimer);
+                that.reciveNewOrderTimer = null;
+                // if(that.newOrderList.length>0){
+                //   that.showNewOrder(that)
+
+                // }else{
+                //   that.newOrder=null
+                // }
+              }
+
+              console.log(5);
+            }, 5000);
           }
         }
-      } else {
-        //每个订单都在页面停留3秒，等待司机手动抢单
-        that.playFlag = false;
-        setTimeout(function () {
-          if (!that.accepting) {
-            that.canAcceptOrder = false;
-            if (that.newOrderList.length > 0) {
-              that.showNewOrder(that);
-            } else {
-              that.newOrder = null;
-            }
-          }
-          console.log(5);
-        }, 5000);
       }
     },
     returnLocationHandle: function returnLocationHandle() {
@@ -757,6 +765,7 @@ var _default = {
         that.rangeDistance = rangeDistance;
         that.orientation = orientation;
         that.orderDistance = orderDistance;
+        console.log('d', rangeDistance);
         uni.setStorageSync('rangeDistance', rangeDistance);
         //保存听单和接单
         uni.setStorageSync('settings', JSON.stringify(that.settings));
