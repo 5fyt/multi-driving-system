@@ -1,6 +1,6 @@
 <template>
     <view class="page">
-        <view v-if="list.length > 0" v-for="one in list" class="row" @tap="choseOneHandle(one.id, one.carPlate)" @longpress="removeHandle(one.id)">
+        <view v-if="list.length > 0" v-for="one in list" class="row" @tap="choseOneHandle(one.id, one.carPlate,one.carType)" @longpress="removeHandle(one.id)">
             <view>
                 <u-icon name="info-circle-fill" color="#2979ff" size="35" class="icon"></u-icon>
                 <text class="car-type">{{ one.carType }}</text>
@@ -21,6 +21,12 @@ export default {
         };
     },
     methods: {
+      choseOneHandle(id,carPlate,carType){
+        uni.navigateTo({
+          url:`../create_order/create_order?showCar=true&carId=${id}&carPlate=${carPlate}&carType=${carType}`
+        })
+      },
+      //展示车辆数据
         showCarInfo(that){
           let list=[]
           that.ajax(that.url.searchCustomerCarList,'GET',{},function(res){

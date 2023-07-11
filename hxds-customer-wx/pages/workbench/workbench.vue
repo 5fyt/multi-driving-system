@@ -32,8 +32,8 @@ export default {
 				longitude: 0,
 				latitude: 0
 			},
-			longitude: 116.397505,
-			latitude: 39.908675,
+			longitude: 0,
+			latitude: 0,
 			contentStyle: '',
 			windowHeight: 0,
 			map: null,

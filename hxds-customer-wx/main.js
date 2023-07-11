@@ -26,13 +26,16 @@ export function createApp() {
     }
 }
 // #endif
-let baseUrl = "http://192.168.120.219:9000"
+let baseUrl = "http://192.168.211.219:9000"
 Vue.prototype.url = {
     registerNewCustomer: `${baseUrl}/customer/register `,
     login: `${baseUrl}/customer/login`,
     insertCustomerCar: `${baseUrl}/customer/car/add`,
     searchCustomerCarList: `${baseUrl}/customer/car/list `,
     deleteCustomerCarById: `${baseUrl}/customer/car/delete`,
+    createCarOrder:`${baseUrl}/customer/order/create`,
+    searchOrderStatus:`${baseUrl}/customer/order/is-accepted`,
+    deleteOrder:`${baseUrl}/customer/order/cancel `
 }
 
 Vue.prototype.tencent = {
@@ -61,6 +64,7 @@ Vue.prototype.ajax = function(url, method, data, fun, load) {
         },
         "data": data,
         success: function(resp) {
+          console.log(resp.data)
             if (load == true || load == undefined) {
                 clearTimeout(timer)
                 uni.hideLoading()
@@ -69,8 +73,9 @@ Vue.prototype.ajax = function(url, method, data, fun, load) {
                 uni.redirectTo({
                     url: "/pages/login/login.vue"
                 })
-            } else if (resp.statusCode == 200 && resp.data.code == 200) {
+            } else if (resp.statusCode == 200 ) {
                 let data = resp.data
+                
                 if (data.hasOwnProperty("token")) {
                     let token = data.token
                     uni.setStorageSync("token", token)

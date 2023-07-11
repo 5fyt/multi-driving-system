@@ -80,16 +80,40 @@ page {
 			color: @fc-4;
 		}
 	}
-	.btn{
-		background-color: @btnc-1;
-		color: #fff;
-		// width: 70%;
-		margin-top: 30rpx;
-		&::after {
-			border: none;
-		}
-		&:active{
-			background-color: @btnac-1;
-		}
-	}
+  .btn{
+  	background-color: @btnc-1;
+  	color: #fff;
+  	// width: 70%;
+  	margin-top: 30rpx;
+  	&::after {
+  		border: none;
+  	}
+  	&:active{
+  		background-color: @btnac-1;
+  	}
+  }
+}
+.pop{
+  .content{
+    display: flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    .popup-title{
+      margin: 30rpx;
+    }
+    .btn{
+    	background-color: @btnc-1;
+    	color: #fff;
+    	width: 50%;
+    	margin-top: 30rpx;
+    	&::after {
+    		border: none;
+    	}
+    	&:active{
+    		background-color: @btnac-1;
+    	}
+    }
+  }
+  
 }

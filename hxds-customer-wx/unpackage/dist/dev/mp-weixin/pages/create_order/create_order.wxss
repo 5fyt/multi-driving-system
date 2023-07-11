@@ -87,4 +87,25 @@ page {
 .panel .btn:active {
   background-color: #0259e9;
 }
+.pop .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.pop .content .popup-title {
+  margin: 30rpx;
+}
+.pop .content .btn {
+  background-color: #2074fd;
+  color: #fff;
+  width: 50%;
+  margin-top: 30rpx;
+}
+.pop .content .btn::after {
+  border: none;
+}
+.pop .content .btn:active {
+  background-color: #0259e9;
+}
 

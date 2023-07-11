@@ -30,7 +30,7 @@ export function createApp() {
 // #endif
 
 
-let baseUrl = "http://192.168.120.219:9000"
+let baseUrl = "http://192.168.0.7:9000"
 
 Vue.prototype.url = {
     registerNewDriver: `${baseUrl}/driver/register`,
@@ -41,7 +41,12 @@ Vue.prototype.url = {
     login:`${baseUrl}/driver/login`,
     driverBaseInfo:`${baseUrl}/driver/profile`,//司机的基本信息
     workbenchData:`${baseUrl}/driver/workbench `,//工作台信息
-    driverAuthInfo:`${baseUrl}/driver/authentication-info`
+    driverAuthInfo:`${baseUrl}/driver/authentication-info`,//上传司机的工作台信息
+    searchOrderMessage:`${baseUrl}/driver/order-messages`,//查询订单消息
+    acceptOrder:`${baseUrl}/driver/accept`,//抢单
+    startAcceptOrder:`${baseUrl}/driver/refresh-working-data`,//开始接单且将司机的位置信息和返回的订单列表
+    startOrder:`${baseUrl}/driver/start-work`,//开始接单扫描附近的单
+    stopOrder:`${baseUrl}/driver/stop-work ` //停止接单
 }
 Vue.prototype.tencent = {
 map: {
@@ -67,7 +72,7 @@ Vue.prototype.ajax = function(url, method, data, fun, load) {
 		"url": url,
 		"method": method,
 		"header": {
-			token: uni.getStorageSync("token")
+			token: uni.getStorageSync("token"),
 		},
 		"data": data,
 		success: function(resp) {
